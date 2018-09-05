@@ -12,7 +12,7 @@
   </view>
 
   <view>
-    <text>{{ msg }} </text>
+    <text class="msg">{{ msg }} </text>
     <button bindtap="clickMe">点击我</button>
   </view>
 </view>
