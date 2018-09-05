@@ -50,5 +50,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  clickMe: function() {
+    this.setData({msg: "msg测试"})
   }
 })
