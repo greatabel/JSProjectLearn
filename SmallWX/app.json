@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#F00",
+    "navigationBarTitleText": "abel微信小程序",
+    "navigationBarTextStyle":"black"
+  }
+}
