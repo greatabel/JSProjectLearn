@@ -56,5 +56,10 @@ Page({
       url: '../demo/demo',
     })
   },
+  bindViewHello: function () {
+    wx.navigateTo({
+      url: '../hello/hello',
+    })
+  },
 
 })
