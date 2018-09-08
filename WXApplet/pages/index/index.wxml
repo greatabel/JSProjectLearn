@@ -11,7 +11,7 @@
  
   <view id="tapDemo" bindtap="bindViewDemo">Demo页</view>
   <view id="tapHello" bindtap="bindViewHello">Hello页</view>
-
+  <view id="tapLifeCycle" bindtap="bindLifeCycle">LifeCycle页</view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>

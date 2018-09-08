@@ -61,5 +61,9 @@ Page({
       url: '../hello/hello',
     })
   },
-
+  bindLifeCycle: function () {
+    wx.navigateTo({
+      url: '../lifecycle/lifecycle',
+    })
+  },
 })
