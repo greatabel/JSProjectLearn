@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/demo/demo",
     "pages/hello/hello",
-    "pages/lifecycle/lifecycle"
+    "pages/lifecycle/lifecycle",
+    "pages/wxkeydemo/wxkeydemo"
   ],
   "window": {
     "backgroundTextStyle": "light",

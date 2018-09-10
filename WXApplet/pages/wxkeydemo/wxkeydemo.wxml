@@ -1,0 +1,6 @@
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display:block;">
+{{item.id}}
+</switch>
+<button wx:for="{{numberArray}}" wx:key="*this" style="display:block;">
+Add to the front
+</button>

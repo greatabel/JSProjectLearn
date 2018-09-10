@@ -66,4 +66,9 @@ Page({
       url: '../lifecycle/lifecycle',
     })
   },
+  bindWxKeyDemo: function () {
+    wx.navigateTo({
+      url: '../wxkeydemo/wxkeydemo',
+    })
+  },
 })
