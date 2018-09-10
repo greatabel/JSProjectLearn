@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<import src="../../utils/msgItem.wxml" />
+
+<template is="msgItem" data="{{...item}}"/>
