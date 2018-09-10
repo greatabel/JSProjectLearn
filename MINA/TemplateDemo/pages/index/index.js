@@ -1,8 +1,8 @@
 Page({
   data: {
     item: {
-      index: 0,
-      msg: 'this is a template',
+      index: 10,
+      msg: '这是模版',
       time: '2018-09-10'
     }
   }
