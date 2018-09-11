@@ -1,0 +1,8 @@
+<template name="headerTemplate">
+<view>
+<text> header </text>
+
+</view>
+</template>
+
+<view>##test header include##</view>

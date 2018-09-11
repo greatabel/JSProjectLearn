@@ -6,3 +6,6 @@
 <block wx:for="{{[1,2,3,4]}}">
   <template is="{{item % 2 == 0? 'even': 'odd' }}" />
 </block>
+
+<include src="../../utils/header.wxml"/>
+<view>body</view>
