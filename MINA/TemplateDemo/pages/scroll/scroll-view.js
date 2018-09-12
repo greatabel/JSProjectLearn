@@ -22,6 +22,11 @@ Page({
         break
       }
     }
+  },
+  tapMove: function (e) {
+    this.setData({
+      scrollTop: this.data.scrollTop + 50
+    })
   }
 
 })

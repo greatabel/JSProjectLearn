@@ -9,7 +9,7 @@
 
   <view class="btn-area">
     <button size="mini" bindtap="tap">移动到竖直下一个view </button>
-    <button size="mini" bindtap="tapMove">click me to scroll</button>
+    <button size="mini" bindtap="tapMove">慢慢移动</button>
   </view>
 </view>
 <view class="section section_gap">
