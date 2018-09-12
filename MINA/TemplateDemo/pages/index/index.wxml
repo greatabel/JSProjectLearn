@@ -1,4 +1,9 @@
 <!--index.wxml-->
+  <view>
+
+    <button bindtap="tapScroll">scrollview页</button>
+  </view>
+
 <import src="../../utils/msgItem.wxml" />
 
 <template is="msgItem" data="{{...item}}"/>
