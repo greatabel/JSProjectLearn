@@ -8,7 +8,7 @@
   </scroll-view>
 
   <view class="btn-area">
-    <button size="mini" bindtap="tap">click me to scroll into view </button>
+    <button size="mini" bindtap="tap">移动到竖直下一个view </button>
     <button size="mini" bindtap="tapMove">click me to scroll</button>
   </view>
 </view>
