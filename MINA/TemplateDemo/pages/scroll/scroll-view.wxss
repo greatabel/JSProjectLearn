@@ -16,7 +16,7 @@
     margin-right: 10rpx;
     margin-top: 5rpx;
     height:500rpx;
-    width: 100rpx;   
+    width: 500rpx;   
 }
 .scroll-view_H {
   width: 100%;
@@ -24,7 +24,7 @@
 }
 
 .scroll-view-item_H {
-  width: 200px;
-  height: 100px;
+  width: 500rpx;
+  height: 500rpx;
   display: inline-block;
 }
