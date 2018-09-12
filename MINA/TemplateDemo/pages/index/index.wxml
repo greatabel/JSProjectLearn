@@ -9,3 +9,12 @@
 
 <include src="../../utils/header.wxml"/>
 <view>body</view>
+
+
+<view class="myclass">
+@@test
+</view>
+
+<view>
+@@test
+</view>

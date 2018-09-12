@@ -19,3 +19,5 @@
 .usermotto {
   margin-top: 200px;
 }
+
+@import '../../utils/common.wxss';
