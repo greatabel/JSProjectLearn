@@ -21,3 +21,36 @@
 }
 
 @import '../../utils/common.wxss';
+
+.container{
+    margin-bottom: 20;
+    display:block;
+}
+.flex-row{
+    
+    background: #8e569e;
+    
+   
+}
+.flex-column{
+    
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    background: #569e98;
+}
+.flex-view-item{
+    
+    color: snow;
+    background: #3a59e4;
+    padding: 8rpx;
+    margin-right: 10rpx;
+    margin-top: 5rpx;
+    
+    
+}
+.text{
+
+    color: snow;
+    background: rgb(116, 114, 250);
+    padding: 8rpx;
+}
