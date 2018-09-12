@@ -2,6 +2,7 @@
   <view>
 
     <button bindtap="tapScroll">scrollview页</button>
+    <button bindtap="tapSwipper">swipperItem页</button>
   </view>
 
 <import src="../../utils/msgItem.wxml" />

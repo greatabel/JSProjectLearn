@@ -10,6 +10,12 @@ Page({
     wx.navigateTo({
       url: '../scroll/scroll-view'
     })
+  },
+  tapSwipper: function () {
+    wx.navigateTo({
+      url: '../swiper/swiper-item'
+    })
   }
+  
   
 })
