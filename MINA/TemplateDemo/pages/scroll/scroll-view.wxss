@@ -1,0 +1,30 @@
+.bc_green {
+  background: green;
+}
+.bc_red {
+  background: red;
+}
+.bc_yellow {
+  background: yellow;
+}
+.bc_blue {
+  background: blue;
+}
+.scroll-view-item {   
+
+    padding: 8rpx;
+    margin-right: 10rpx;
+    margin-top: 5rpx;
+    height:500rpx;
+    width: 100rpx;   
+}
+.scroll-view_H {
+  width: 100%;
+  white-space: nowrap;
+}
+
+.scroll-view-item_H {
+  width: 200px;
+  height: 100px;
+  display: inline-block;
+}
