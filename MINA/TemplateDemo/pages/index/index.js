@@ -6,26 +6,34 @@ Page({
       time: '2018-09-10'
     }
   },
-  tapScroll: function(){
+  tapJumpToPage: function(e){
+    console.log(e.currentTarget.id)
+    var url = ''
+    switch (e.currentTarget.id){
+      case 'Scroll':
+        url =  '../scroll/scroll-view'
+        break
+      case 'Swipper':
+        url = '../swiper/swiper-item'
+        break
+      case 'Movable':
+        url = '../movable/movable-view'
+        break
+      case 'Cover':
+        url = '../cover/cover-view'
+        break
+      case 'basicContent':
+        url = '../basicContent/basic-content'
+        break
+      default:
+        url = ''
+    }
     wx.navigateTo({
-      url: '../scroll/scroll-view'
+      url: url
     })
+
   },
-  tapSwipper: function () {
-    wx.navigateTo({
-      url: '../swiper/swiper-item'
-    })
-  },
-  tapMovable: function () {
-    wx.navigateTo({
-      url: '../movable/movable-view'
-    })
-  },
-  tapCover: function() {
-    wx.navigateTo({
-      url: '../cover/cover-view'
-    })
-  },
+
   
   
 })

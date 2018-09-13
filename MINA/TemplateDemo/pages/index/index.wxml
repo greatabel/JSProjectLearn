@@ -1,10 +1,11 @@
 <!--index.wxml-->
   <view>
 
-    <button bindtap="tapScroll">scrollview页</button>
-    <button bindtap="tapSwipper">swipperItem页</button>
-    <button bindtap="tapMovable">movable-view页</button>
-    <button bindtap="tapCover">cover-view页</button>
+    <button bindtap="tapJumpToPage" id="Scroll">scrollview页</button>
+    <button bindtap="tapJumpToPage" id="Swipper">swipperItem页</button>
+    <button bindtap="tapJumpToPage" id="Movable">movable-view页</button>
+    <button bindtap="tapJumpToPage" id="Cover">cover-view页</button>
+    <button bindtap="tapJumpToPage" id="basicContent">basicContent页</button>
   </view>
 
 <import src="../../utils/msgItem.wxml" />
