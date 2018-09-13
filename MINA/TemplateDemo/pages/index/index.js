@@ -21,6 +21,11 @@ Page({
       url: '../movable/movable-view'
     })
   },
+  tapCover: function() {
+    wx.navigateTo({
+      url: '../cover/cover-view'
+    })
+  },
   
   
 })
