@@ -1,1 +1,8 @@
-/* pages/formComponent/form-component.wxss */
+/** Modify the default style class when a button is pressed**/
+.button-hover {
+  background-color: red;
+}
+/** Add a customized style class when a button is pressed**/
+.other-button-hover {
+  background-color: blue;
+}

@@ -1,2 +1,12 @@
-<!--pages/formComponent/form-component.wxml-->
-<text>pages/formComponent/form-component.wxml</text>
+<button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> default </button>
+<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="primary"> primary </button>
+<button type="warn" size="{{warnSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="warn"> warn </button>
+<button bindtap="setDisabled">Tap to set "disabled" attributes for above buttons</button>
+<button bindtap="setPlain">Tap to set "plain" attributes for above buttons</button>
+<button bindtap="setLoading">Tap to set "loading" attributes for above buttons</button>
+<button open-type="contact">Enter customer service session</button>
+<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">Get user information</button>
+<button open-type="openSetting">Open the Authorization Settings page</button>
