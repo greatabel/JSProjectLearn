@@ -6,6 +6,8 @@
     <button bindtap="tapJumpToPage" id="Movable">movable-view页</button>
     <button bindtap="tapJumpToPage" id="Cover">cover-view页</button>
     <button bindtap="tapJumpToPage" id="basicContent">basicContent页</button>
+    <button bindtap="tapJumpToPage" id="formComponent">form-component页</button>
+    
   </view>
 
 <import src="../../utils/msgItem.wxml" />

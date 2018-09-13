@@ -25,6 +25,9 @@ Page({
       case 'basicContent':
         url = '../basicContent/basic-content'
         break
+      case 'formComponent':
+        url = '../formComponent/form-component'
+        break
       default:
         url = ''
     }

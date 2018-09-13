@@ -5,7 +5,8 @@
     "pages/swiper/swiper-item",
     "pages/movable/movable-view",
     "pages/cover/cover-view",
-    "pages/basicContent/basic-content"
+    "pages/basicContent/basic-content",
+    "pages/formComponent/form-component"
   ],
   "window": {
     "backgroundTextStyle": "light",
