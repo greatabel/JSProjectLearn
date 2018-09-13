@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/scroll/scroll-view",
-    "pages/swiper/swiper-item"
+    "pages/swiper/swiper-item",
+    "pages/movable/movable-view"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -15,7 +15,12 @@ Page({
     wx.navigateTo({
       url: '../swiper/swiper-item'
     })
-  }
+  },
+  tapMovable: function () {
+    wx.navigateTo({
+      url: '../movable/movable-view'
+    })
+  },
   
   
 })
