@@ -10,9 +10,23 @@ Page({
     iconType: [
       'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
     ],
-    text: initData
+    text: initData,
+    nodes: [{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: red;'
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello&nbsp;World!'
+      }, {
+          type: 'text',
+          text: ' Hello&nbsp;World 1!'
+        }]
+    }]
   },
-  
+
   add: function (e) {
     extraLine.push('other line')
     this.setData({
@@ -26,5 +40,8 @@ Page({
         text: initData + '\n' + extraLine.join('\n')
       })
     }
+  },
+  tap() {
+    console.log('tap')
   }
 })

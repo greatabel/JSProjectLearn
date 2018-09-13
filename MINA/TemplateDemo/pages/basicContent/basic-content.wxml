@@ -24,3 +24,5 @@
     <button bindtap="remove">remove line</button>
   </view>
 </view>
+
+<rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
