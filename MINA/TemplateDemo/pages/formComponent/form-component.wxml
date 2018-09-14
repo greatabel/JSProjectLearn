@@ -10,3 +10,9 @@
 <button open-type="contact">Enter customer service session</button>
 <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">Get user information</button>
 <button open-type="openSetting">Open the Authorization Settings page</button>
+
+<checkbox-group bindchange="checkboxChange">
+  <label class="checkbox" wx:for="{{items}}">
+    <checkbox value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</checkbox-group>
