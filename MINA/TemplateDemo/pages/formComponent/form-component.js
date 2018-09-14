@@ -75,6 +75,22 @@ var pageObject = {
 
     //或者直接返回字符串,光标在最后边
     //return value.replace(/11/g,'2'),
+  },
+  tapJumpToPage: function (e) {
+    console.log(e.currentTarget.id)
+    var url = ''
+    switch (e.currentTarget.id) {
+      case 'label':
+        url = 'label/label'
+        break
+
+      default:
+        url = ''
+    }
+    wx.navigateTo({
+      url: url
+    })
+
   }
 }
 

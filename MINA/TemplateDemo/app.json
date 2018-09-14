@@ -6,7 +6,8 @@
     "pages/movable/movable-view",
     "pages/cover/cover-view",
     "pages/basicContent/basic-content",
-    "pages/formComponent/form-component"
+    "pages/formComponent/form-component",
+    "pages/formComponent/label/label"
   ],
   "window": {
     "backgroundTextStyle": "light",

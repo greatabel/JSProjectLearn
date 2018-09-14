@@ -1,3 +1,5 @@
+<button bindtap="tapJumpToPage" id="label">前往label页</button>
+ 
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
 		disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> default </button>
 <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
