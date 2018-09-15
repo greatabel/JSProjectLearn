@@ -83,7 +83,9 @@ var pageObject = {
       case 'label':
         url = 'label/label'
         break
-
+      case 'picker':
+        url = 'picker/picker'
+        break
       default:
         url = ''
     }
