@@ -86,6 +86,9 @@ var pageObject = {
       case 'picker':
         url = 'picker/picker'
         break
+      case 'slider':
+        url = 'slider/slider'
+        break
       default:
         url = ''
     }

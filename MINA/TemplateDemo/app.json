@@ -8,7 +8,8 @@
     "pages/basicContent/basic-content",
     "pages/formComponent/form-component",
     "pages/formComponent/label/label",
-    "pages/formComponent/picker/picker"
+    "pages/formComponent/picker/picker",
+    "pages/formComponent/slider/slider"
   ],
   "window": {
     "backgroundTextStyle": "light",

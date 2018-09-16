@@ -1,5 +1,6 @@
 <button bindtap="tapJumpToPage" id="label">前往label页</button>
 <button bindtap="tapJumpToPage" id="picker">前往picker页</button>
+<button bindtap="tapJumpToPage" id="slider">前往slider页</button>
 
 <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
 		disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> default </button>
