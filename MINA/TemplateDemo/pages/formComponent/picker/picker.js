@@ -1,3 +1,20 @@
+const date = new Date()
+const years = []
+const months = []
+const days = []
+
+for (let i = 1990; i <= date.getFullYear(); i++) {
+  years.push(i)
+}
+
+for (let i = 1; i <= 12; i++) {
+  months.push(i)
+}
+
+for (let i = 1; i <= 31; i++) {
+  days.push(i)
+}
+
 Page({
   data: {
     array: ['美国', '中国', '巴西', '日本'],
@@ -67,8 +84,26 @@ Page({
     date: '2016-09-01',
     time: '12:01',
     region: ['广东省', '广州市', '海珠区'],
-    customItem: '全部'
+    customItem: '全部',
+
+    years: years,
+    year: date.getFullYear(),
+    months: months,
+    month: 2,
+    days: days,
+    day: 2,
+    value: [9999, 1, 1],
   },
+  bindChange: function (e) {
+    const val = e.detail.value
+    this.setData({
+      year: this.data.years[val[0]],
+      month: this.data.months[val[1]],
+      day: this.data.days[val[2]]
+    })
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+  },
+
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
