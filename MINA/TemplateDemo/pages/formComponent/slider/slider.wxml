@@ -18,3 +18,9 @@
     <slider bindchange="slider4change" min="50" max="200" show-value/>
   </view>
 </view>
+
+
+<view class="body-view">
+    <switch checked bindchange="switch1Change"/>
+    <switch bindchange="switch2Change"/>
+</view>
