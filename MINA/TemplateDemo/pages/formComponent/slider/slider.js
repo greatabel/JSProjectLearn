@@ -1,4 +1,20 @@
-var pageData = {}
+var pageData = {
+  data: {
+    height: 20,
+    focus: false
+  },
+  bindButtonTap: function () {
+    this.setData({
+      focus: true
+    })
+  },
+  bindTextAreaBlur: function (e) {
+    console.log(e.detail.value)
+  },
+  bindFormSubmit: function (e) {
+    console.log(e.detail.value.textarea)
+  }
+}
 for (var i = 1; i < 5; i++) {
   (function (index) {
     pageData['slider' + index + 'change'] = function (e) {
