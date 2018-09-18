@@ -17,6 +17,9 @@ Page({
       case 'image':
         url = 'image/image'
         break
+      case 'video':
+        url = 'video/video'
+        break
       default:
         url = ''
     }

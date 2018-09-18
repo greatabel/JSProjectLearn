@@ -14,7 +14,8 @@
     "pages/navigator/navigator",
     "pages/media/media",
     "pages/media/audio/audio",
-    "pages/media/image/image"
+    "pages/media/image/image",
+    "pages/media/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",
