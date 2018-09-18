@@ -5,4 +5,5 @@
     <button bindtap="tapJumpToPage" id="video">video页</button> 
     <button bindtap="tapJumpToPage" id="camera">camera页</button>
     <button bindtap="tapJumpToPage" id="live-player">live-player页</button> 
+    <button bindtap="tapJumpToPage" id="live-pusher">live-pusher页</button> 
   </view>

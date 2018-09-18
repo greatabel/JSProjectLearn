@@ -26,6 +26,9 @@ Page({
       case 'live-player':
         url = 'live-player/live-player'
         break
+      case 'live-pusher':
+        url = 'live-pusher/live-pusher'
+        break
       default:
         url = ''
     }
