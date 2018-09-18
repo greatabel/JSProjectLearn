@@ -28,6 +28,9 @@ Page({
       case 'formComponent':
         url = '../formComponent/form-component'
         break
+      case 'interact':
+        url = '../interact/interact'
+        break
       default:
         url = ''
     }

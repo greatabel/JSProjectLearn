@@ -9,7 +9,8 @@
     "pages/formComponent/form-component",
     "pages/formComponent/label/label",
     "pages/formComponent/picker/picker",
-    "pages/formComponent/slider/slider"
+    "pages/formComponent/slider/slider",
+    "pages/interact/interact"
   ],
   "window": {
     "backgroundTextStyle": "light",
