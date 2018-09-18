@@ -14,6 +14,9 @@ Page({
       case 'audio':
         url = 'audio/audio'
         break
+      case 'image':
+        url = 'image/image'
+        break
       default:
         url = ''
     }

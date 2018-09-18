@@ -13,7 +13,8 @@
     "pages/interact/interact",
     "pages/navigator/navigator",
     "pages/media/media",
-    "pages/media/audio/audio"
+    "pages/media/audio/audio",
+    "pages/media/image/image"
   ],
   "window": {
     "backgroundTextStyle": "light",
