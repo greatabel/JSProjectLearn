@@ -1,2 +1,5 @@
-<!--pages/media/media.wxml-->
-<text>pages/media/media.wxml</text>
+  <view>
+
+    <button bindtap="tapJumpToPage" id="audio">audio页</button>
+  
+  </view>

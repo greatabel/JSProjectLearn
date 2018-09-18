@@ -12,7 +12,8 @@
     "pages/formComponent/slider/slider",
     "pages/interact/interact",
     "pages/navigator/navigator",
-    "pages/media/media"
+    "pages/media/media",
+    "pages/media/audio/audio"
   ],
   "window": {
     "backgroundTextStyle": "light",
