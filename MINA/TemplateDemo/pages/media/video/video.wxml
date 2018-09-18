@@ -1,2 +1,6 @@
-<!--pages/media/video/video.wxml-->
-<text>pages/media/video/video.wxml</text>
+<view class="section tc">
+  <video src="{{src}}"   controls ></video>
+  <view class="btn-area">
+    <button bindtap="bindButtonTap">获取视频</button>
+  </view>
+</view>
