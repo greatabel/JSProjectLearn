@@ -16,7 +16,8 @@
     "pages/media/audio/audio",
     "pages/media/image/image",
     "pages/media/video/video",
-    "pages/media/camera/camera"
+    "pages/media/camera/camera",
+    "pages/media/live-player/live-player"
   ],
   "window": {
     "backgroundTextStyle": "light",

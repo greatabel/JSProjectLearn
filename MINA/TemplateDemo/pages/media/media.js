@@ -1,16 +1,40 @@
 Page({
-  takePhoto() {
-    const ctx = wx.createCameraContext()
-    ctx.takePhoto({
-      quality: 'high',
-      success: (res) => {
-        this.setData({
-          src: res.tempImagePath
-        })
-      }
-    })
+  data: {
+    item: {
+      index: 10,
+      msg: '这是模版',
+      time: '2018-09-10'
+    }
   },
-  error(e) {
-    console.log(e.detail)
-  }
+  tapJumpToPage: function (e) {
+    console.log(e.currentTarget.id)
+    var url = ''
+    switch (e.currentTarget.id) {
+
+      case 'audio':
+        url = 'audio/audio'
+        break
+      case 'image':
+        url = 'image/image'
+        break
+      case 'video':
+        url = 'video/video'
+        break
+      case 'camera':
+        url = 'camera/camera'
+        break
+      case 'live-player':
+        url = 'live-player/live-player'
+        break
+      default:
+        url = ''
+    }
+    wx.navigateTo({
+      url: url
+    })
+
+  },
+
+
+
 })
