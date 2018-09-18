@@ -1,2 +1,12 @@
-<!--pages/interact/interact.wxml-->
-<text>pages/interact/interact.wxml</text>
+<!--触发actionSheet事件-->
+<button type="primary" catchtap="actionSheet">
+    弹出ActionSheet
+</button>
+<!--默认action-sheet为隐藏，由button触发-->
+<action-sheet hidden="{{actionSheetHidden}}" catchchange="actionSheet" >
+    <block wx:for="{{actionSheetItems}}" > 
+        <action-sheet-item bindtap="itemTap" data-name="item">{{item}}</action-sheet-item>
+    </block>
+    <!--自动隐藏action-sheet-->
+    <action-sheet-cancel>取消</action-sheet-cancel>
+</action-sheet>
