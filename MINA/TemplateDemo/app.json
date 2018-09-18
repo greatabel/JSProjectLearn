@@ -10,7 +10,8 @@
     "pages/formComponent/label/label",
     "pages/formComponent/picker/picker",
     "pages/formComponent/slider/slider",
-    "pages/interact/interact"
+    "pages/interact/interact",
+    "pages/navigator/navigator"
   ],
   "window": {
     "backgroundTextStyle": "light",

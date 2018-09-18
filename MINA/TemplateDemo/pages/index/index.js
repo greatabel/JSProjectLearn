@@ -31,6 +31,9 @@ Page({
       case 'interact':
         url = '../interact/interact'
         break
+      case 'navigator':
+        url = '../navigator/navigator'
+        break
       default:
         url = ''
     }
