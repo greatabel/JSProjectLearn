@@ -3,4 +3,5 @@
     <button bindtap="tapJumpToPage" id="audio">audio页</button>
     <button bindtap="tapJumpToPage" id="image">image页</button>  
     <button bindtap="tapJumpToPage" id="video">video页</button> 
+    <button bindtap="tapJumpToPage" id="camera">camera页</button> 
   </view>

@@ -20,6 +20,9 @@ Page({
       case 'video':
         url = 'video/video'
         break
+      case 'camera':
+        url = 'camera/camera'
+        break
       default:
         url = ''
     }
