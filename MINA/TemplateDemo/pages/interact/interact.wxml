@@ -10,3 +10,7 @@
     <!--自动隐藏action-sheet-->
     <action-sheet-cancel>取消</action-sheet-cancel>
 </action-sheet>
+
+<modal hidden="{{hidden}}" title="这里是title" confirm-text="自定义确定按钮" cancel-text="自定义取消按钮" bindcancel="cancel" bindconfirm="confirm" no-cancel="{{nocancel}}">
+    这是对话框的内容。
+</modal>
