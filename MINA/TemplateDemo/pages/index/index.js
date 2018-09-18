@@ -34,6 +34,9 @@ Page({
       case 'navigator':
         url = '../navigator/navigator'
         break
+      case 'media':
+        url = '../media/media'
+        break
       default:
         url = ''
     }

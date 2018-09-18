@@ -11,7 +11,8 @@
     "pages/formComponent/picker/picker",
     "pages/formComponent/slider/slider",
     "pages/interact/interact",
-    "pages/navigator/navigator"
+    "pages/navigator/navigator",
+    "pages/media/media"
   ],
   "window": {
     "backgroundTextStyle": "light",

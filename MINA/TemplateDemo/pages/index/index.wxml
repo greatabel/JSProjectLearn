@@ -9,6 +9,7 @@
     <button bindtap="tapJumpToPage" id="formComponent">form-component页</button>
     <button bindtap="tapJumpToPage" id="interact">interact页</button>
     <button bindtap="tapJumpToPage" id="navigator">navigator页</button>    
+    <button bindtap="tapJumpToPage" id="media">media页</button>   
   </view>
 
 <import src="../../utils/msgItem.wxml" />
