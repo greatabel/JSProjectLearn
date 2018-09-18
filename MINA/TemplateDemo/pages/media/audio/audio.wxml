@@ -1,2 +1,1 @@
-<!--pages/media/audio/audio.wxml-->
-<text>pages/media/audio/audio.wxml</text>
+<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
