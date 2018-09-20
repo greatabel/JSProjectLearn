@@ -46,6 +46,9 @@ Page({
       case 'open-data':
         url = '../open-data/open-data'
         break
+      case 'web-view':
+        url = '../web-view/web-view'
+        break
       default:
         url = ''
     }
@@ -58,3 +61,4 @@ Page({
   
   
 })
+

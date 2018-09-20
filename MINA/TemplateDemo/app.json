@@ -21,7 +21,8 @@
     "pages/media/live-pusher/live-pusher",
     "pages/map/map",
     "pages/canvas/canvas",
-    "pages/open-data/open-data"
+    "pages/open-data/open-data",
+    "pages/web-view/web-view"
   ],
   "window": {
     "backgroundTextStyle": "light",

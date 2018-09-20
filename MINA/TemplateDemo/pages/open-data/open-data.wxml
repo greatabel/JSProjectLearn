@@ -1,2 +1,3 @@
-<!--pages/open-data/open-data.wxml-->
-<text>pages/open-data/open-data.wxml</text>
+<!-- <open-data type="groupName" open-gid="{{open_gid}}"></open-data> -->
+<open-data type="userAvatarUrl"></open-data>
+<open-data type="userGender" lang="zh_CN"></open-data>

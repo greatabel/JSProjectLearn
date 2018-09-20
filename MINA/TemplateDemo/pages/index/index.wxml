@@ -13,7 +13,8 @@
     <button bindtap="tapJumpToPage" id="map">map页</button>  
     <button bindtap="tapJumpToPage" id="canvas">canvas页</button>
     <button bindtap="tapJumpToPage" id="open-data">open-data页</button>
-      
+    <button bindtap="tapJumpToPage" id="web-view">web-view页</button>
+
   </view>
 
 <import src="../../utils/msgItem.wxml" />
