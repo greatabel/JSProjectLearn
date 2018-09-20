@@ -11,6 +11,7 @@
     <button bindtap="tapJumpToPage" id="navigator">navigator页</button>    
     <button bindtap="tapJumpToPage" id="media">media页</button>
     <button bindtap="tapJumpToPage" id="map">map页</button>  
+    <button bindtap="tapJumpToPage" id="canvas">canvas页</button>  
   </view>
 
 <import src="../../utils/msgItem.wxml" />

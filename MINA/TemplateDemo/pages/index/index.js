@@ -40,6 +40,9 @@ Page({
       case 'map':
         url = '../map/map'
         break
+      case 'canvas':
+        url = '../canvas/canvas'
+        break
       default:
         url = ''
     }

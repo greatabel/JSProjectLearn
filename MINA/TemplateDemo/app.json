@@ -19,7 +19,8 @@
     "pages/media/camera/camera",
     "pages/media/live-player/live-player",
     "pages/media/live-pusher/live-pusher",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/canvas/canvas"
   ],
   "window": {
     "backgroundTextStyle": "light",
