@@ -43,6 +43,9 @@ Page({
       case 'canvas':
         url = '../canvas/canvas'
         break
+      case 'open-data':
+        url = '../open-data/open-data'
+        break
       default:
         url = ''
     }

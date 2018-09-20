@@ -20,7 +20,8 @@
     "pages/media/live-player/live-player",
     "pages/media/live-pusher/live-pusher",
     "pages/map/map",
-    "pages/canvas/canvas"
+    "pages/canvas/canvas",
+    "pages/open-data/open-data"
   ],
   "window": {
     "backgroundTextStyle": "light",
