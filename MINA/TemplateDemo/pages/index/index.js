@@ -37,6 +37,9 @@ Page({
       case 'media':
         url = '../media/media'
         break
+      case 'map':
+        url = '../map/map'
+        break
       default:
         url = ''
     }
