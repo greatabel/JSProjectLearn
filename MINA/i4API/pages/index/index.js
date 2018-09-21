@@ -11,8 +11,17 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
+    wx.downloadFile({
+      url: 'https://wx.qq.com/audio/123', //仅为示例，并非真实的资源
+      success(res) {
+        console.log('downloadFile')
+        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+        if (res.statusCode === 200) {
+          wx.playVoice({
+            filePath: res.tempFilePath
+          })
+        }
+      }
     })
   },
   onLoad: function () {
