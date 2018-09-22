@@ -11,18 +11,33 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.downloadFile({
-      url: 'https://wx.qq.com/audio/123', //仅为示例，并非真实的资源
+    // const downloadTask = wx.downloadFile({
+    //   url: 'https://lumistatic.blob.core.chinacloudapi.cn/android/meomo-0.5.0.apk', //仅为示例，并非真实的资源
+    //   success(res) {
+    //     wx.playVoice({
+    //       filePath: res.tempFilePath
+    //     })
+    //   }
+    // })
+
+    // downloadTask.onProgressUpdate((res) => {
+    //   console.log('下载进度', res.progress)
+    //   console.log('已经下载的数据长度', res.totalBytesWritten)
+    //   console.log('预期需要下载的数据总长度', res.totalBytesExpectedToWrite)
+    // })
+
+    // downloadTask.abort() // 取消下载任务
+
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
       success(res) {
-        console.log('downloadFile')
-        // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
-        if (res.statusCode === 200) {
-          wx.playVoice({
-            filePath: res.tempFilePath
-          })
-        }
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
       }
     })
+    
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
