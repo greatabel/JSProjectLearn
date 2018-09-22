@@ -49,7 +49,7 @@ Page({
         break
       case 'previewImage':
         wx.previewImage({
-          urls: ['https://img1.gtimg.com/ninja/2/2018/09/ninja153749892389423.jpg',
+          urls:           ['https://img1.gtimg.com/ninja/2/2018/09/ninja153749892389423.jpg',
           'https://img1.gtimg.com/ninja/2/2018/09/ninja153740742238761.jpg'],
         })
         break
@@ -64,7 +64,23 @@ Page({
           wx.stopRecord() // 结束录音
         }, 10000)
         break
-      
+      case 'playVoice':
+        wx.startRecord({
+          success(res) {
+            const tempFilePath = res.tempFilePath
+            console.log('playVoice tempFilePath=', tempFilePath)
+            wx.playVoice({
+              filePath: tempFilePath,
+              complete() { }
+            })
+          }
+        })
+        break
+      case 'playBackgroundAudio':
+        wx.playBackgroundAudio({
+          dataUrl: 'http://screencasts.b0.upaiyun.com/podcasts/teahour_episode_93.mp3'
+        })
+        break
       default:
         url = ''
     }

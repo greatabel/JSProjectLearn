@@ -11,5 +11,7 @@
    <button bindtap="tapJumpToPage" id="chooseImage">chooseImage</button>
    <button bindtap="tapJumpToPage" id="previewImage">previewImage</button>
    <button bindtap="tapJumpToPage" id="startRecord">startRecord</button>
+   <button bindtap="tapJumpToPage" id="playVoice">playVoice</button>
+   <button bindtap="tapJumpToPage" id="playBackgroundAudio">playBackgroundAudio</button>
   </view>
 </view>
