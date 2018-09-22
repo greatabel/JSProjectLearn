@@ -28,17 +28,33 @@ Page({
 
     // downloadTask.abort() // 取消下载任务
 
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths
-      }
-    })
-    
+
+
   },
+
+  tapJumpToPage: function (e) {
+    console.log(e.currentTarget.id)
+    var url = ''
+    switch (e.currentTarget.id) {
+      case 'chooseImage':
+        wx.chooseImage({
+          count: 1,
+          sizeType: ['original', 'compressed'],
+          sourceType: ['album', 'camera'],
+          success(res) {
+            // tempFilePath可以作为img标签的src属性显示图片
+            const tempFilePaths = res.tempFilePaths
+          }
+        })
+        break
+      
+      default:
+        url = ''
+    }
+
+
+  },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
