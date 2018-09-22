@@ -93,6 +93,14 @@ Page({
           },
         })
         break
+      case 'getNetworkType':
+        wx.getNetworkType({
+          success: function(res) {
+          var networkType = res.networkType
+            console.log('getNetworkType=', networkType)  
+          },
+        })
+        break
       default:
         url = ''
     }
