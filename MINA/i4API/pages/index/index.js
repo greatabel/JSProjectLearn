@@ -47,6 +47,12 @@ Page({
           }
         })
         break
+      case 'previewImage':
+        wx.previewImage({
+          urls: ['https://img1.gtimg.com/ninja/2/2018/09/ninja153749892389423.jpg',
+          'https://img1.gtimg.com/ninja/2/2018/09/ninja153740742238761.jpg'],
+        })
+        break
       
       default:
         url = ''
