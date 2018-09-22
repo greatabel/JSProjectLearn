@@ -53,6 +53,17 @@ Page({
           'https://img1.gtimg.com/ninja/2/2018/09/ninja153740742238761.jpg'],
         })
         break
+      case 'startRecord':
+        wx.startRecord({
+          success(res) {
+            const tempFilePath = res.tempFilePath
+            console.log('tempFilePath=', tempFilePath)
+          }
+        })
+        setTimeout(function () {
+          wx.stopRecord() // 结束录音
+        }, 10000)
+        break
       
       default:
         url = ''

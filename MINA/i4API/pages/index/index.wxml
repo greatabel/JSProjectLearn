@@ -10,5 +10,6 @@
   <view>
    <button bindtap="tapJumpToPage" id="chooseImage">chooseImage</button>
    <button bindtap="tapJumpToPage" id="previewImage">previewImage</button>
+   <button bindtap="tapJumpToPage" id="startRecord">startRecord</button>
   </view>
 </view>
