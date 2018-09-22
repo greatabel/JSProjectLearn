@@ -81,6 +81,18 @@ Page({
           dataUrl: 'http://screencasts.b0.upaiyun.com/podcasts/teahour_episode_93.mp3'
         })
         break
+      case 'getLocation':
+        wx.getLocation({
+          type: 'wgs84',
+          success: function(res) {
+            var lat = res.latitude
+            var lon = res.longitude
+            var speed = res.speed
+            var accuracy = res.accuracy
+            console.log(lat, lon, speed, accuracy)
+          },
+        })
+        break
       default:
         url = ''
     }
