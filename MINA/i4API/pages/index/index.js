@@ -120,6 +120,19 @@ Page({
           console.log('hideToast')
         }, 2000)
         break
+      case 'showLoading':
+        wx.showLoading({
+          title: 'abel加载ing',
+          mask:true,
+          success: function (res) {
+            setTimeout(function () {
+              wx.hideLoading()
+              console.log('hideLoading')
+            }, 2000)
+          }
+
+        })
+        break
       default:
         url = ''
     }

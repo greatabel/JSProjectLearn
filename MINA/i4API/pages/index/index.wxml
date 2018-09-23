@@ -10,5 +10,6 @@
   <button bindtap="tapJumpToPage" id="getNetworkType">getNetworkType</button>
   <button bindtap="tapJumpToPage" id="getSystemInfo">getSystemInfo</button>
   <button bindtap="tapJumpToPage" id="showToast">showToast</button>
+  <button bindtap="tapJumpToPage" id="showLoading">showLoading</button>
 </view>
 
