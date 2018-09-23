@@ -143,6 +143,17 @@ Page({
           }
         })
         break
+      case 'Navigation':
+        wx.setNavigationBarTitle({
+          title: 'currentpage',
+        })
+        wx.navigateTo({
+          url: '../test/test?id=1',
+        })
+        wx.redirectTo({
+          url: '../test/test?id=2',
+        })
+        break
       default:
         url = ''
     }

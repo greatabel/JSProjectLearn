@@ -12,5 +12,6 @@
   <button bindtap="tapJumpToPage" id="showToast">showToast</button>
   <button bindtap="tapJumpToPage" id="showLoading">showLoading</button>
   <button bindtap="tapJumpToPage" id="showActionSheet">showActionSheet</button>
+  <button bindtap="tapJumpToPage" id="Navigation">Navigation</button>
 </view>
 
