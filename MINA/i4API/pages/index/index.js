@@ -175,6 +175,11 @@ Page({
           })
         }.bind(this), 1000)
         break
+      case 'canvas':
+        wx.redirectTo({
+          url: '../test/test',
+        })
+        break
       default:
         url = ''
     }

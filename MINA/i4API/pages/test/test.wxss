@@ -1,1 +1,3 @@
-/* pages/test/test.wxss */
+button {
+  margin-top: 30rpx;
+}

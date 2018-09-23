@@ -1,66 +1,75 @@
-// pages/test/test.js
+function convertToGrayscale(data) {
+  let g = 0
+  for (let i = 0; i < data.length; i += 4) {
+    g = (data[i] * 0.3 + data[i + 1] * 0.59 + data[i + 2] * 0.11)
+    data[i] = g
+    data[i + 1] = g
+    data[i + 2] = g
+  }
+  return data
+}
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  onReady() {
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  openAndDraw() {
+    wx.chooseImage({
+      success: (res) => {
+        const ctx = wx.createCanvasContext('canvasIn', this);
+        ctx.drawImage(res.tempFilePaths[0], 0, 0)
+        ctx.draw()
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  export() {
+    wx.canvasToTempFilePath({
+      canvasId: 'canvasOut',
+      success: (res) => {
+        wx.saveImageToPhotosAlbum({
+          filePath: res.tempFilePath,
+          success: (res) => {
+            console.log(res)
+          },
+          fail: (err) => {
+            console.error(err)
+          }
+        })
+      },
+      fail: (err) => {
+        console.error(err)
+      }
+    }, this)
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  process() {
+    const cfg = {
+      x: 0,
+      y: 0,
+      width: 300,
+      height: 300,
+    }
+    wx.canvasGetImageData({
+      canvasId: 'canvasIn',
+      ...cfg,
+      success: (res) => {
+        const data = convertToGrayscale(res.data)
+        wx.canvasPutImageData({
+          canvasId: 'canvasOut',
+          data,
+          ...cfg,
+          success: (res) => {
+            console.log(res)
+          },
+          fail: (err) => {
+            console.error(err)
+          }
+        })
+      },
+      fail: (err) => {
+        console.error(err)
+      }
+    })
   }
 })
