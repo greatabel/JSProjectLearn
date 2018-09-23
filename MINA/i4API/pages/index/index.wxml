@@ -13,5 +13,8 @@
   <button bindtap="tapJumpToPage" id="showLoading">showLoading</button>
   <button bindtap="tapJumpToPage" id="showActionSheet">showActionSheet</button>
   <button bindtap="tapJumpToPage" id="Navigation">Navigation</button>
+  <button bindtap="tapJumpToPage" id="Animation">Animation</button>
 </view>
+
+<view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view>
 
