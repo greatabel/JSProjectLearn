@@ -8,5 +8,6 @@
   <button bindtap="tapJumpToPage" id="playBackgroundAudio">playBackgroundAudio</button>
   <button bindtap="tapJumpToPage" id="getLocation">getLocation</button>
   <button bindtap="tapJumpToPage" id="getNetworkType">getNetworkType</button>
+  <button bindtap="tapJumpToPage" id="getSystemInfo">getSystemInfo</button>
 </view>
 

@@ -98,6 +98,17 @@ Page({
           },
         })
         break
+      case 'getSystemInfo':
+        wx.getSystemInfo({
+          success: function(res) {
+            console.log('res.model=',res.model)
+            console.log('res.pixelRatio=',res.pixelRatio)
+            console.log(res.windowWidth, res.windowHeight)  
+            console.log(res.language)
+            console.log(res.version)
+          },
+        })
+        break
       default:
         url = ''
     }
