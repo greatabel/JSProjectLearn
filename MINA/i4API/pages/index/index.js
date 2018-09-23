@@ -109,6 +109,17 @@ Page({
           },
         })
         break
+      case 'showToast':
+        wx.showToast({
+          title: '加载ing',
+          icon: 'loading',
+          duration: 10000
+        })
+        setTimeout(function(){
+          wx.hideToast()
+          console.log('hideToast')
+        }, 2000)
+        break
       default:
         url = ''
     }

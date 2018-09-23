@@ -9,5 +9,6 @@
   <button bindtap="tapJumpToPage" id="getLocation">getLocation</button>
   <button bindtap="tapJumpToPage" id="getNetworkType">getNetworkType</button>
   <button bindtap="tapJumpToPage" id="getSystemInfo">getSystemInfo</button>
+  <button bindtap="tapJumpToPage" id="showToast">showToast</button>
 </view>
 
