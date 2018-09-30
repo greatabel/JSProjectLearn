@@ -1,7 +1,7 @@
-<view>
-<image src="/images/avatar/avatar-1.png"></image>
-<text>Hello 橘子罐头</text>
-<view>
-<text>开启MINA之旅</text>
+<view class="container">
+<image class='avatar' src="/images/avatar/avatar-1.png"></image>
+<text class="motto">Hello 橘子罐头</text>
+<view class="journey-container">
+<text class='journey'>开启MINA之旅</text>
 </view>
 </view>
