@@ -1,6 +1,7 @@
 {
   "pages":[
-    "pages/welcome/welcome"
+    "pages/welcome/welcome",
+    "pages/post/post"
   ],
   "window":{
     "backgroundTextStyle":"light",
