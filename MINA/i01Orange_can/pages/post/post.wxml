@@ -1,2 +1,13 @@
-<!--pages/post/post.wxml-->
-<text>pages/post/post.wxml</text>
+<view>
+<swiper>
+  <swiper-item>
+  <image src="/images/post/post-1@text.jpg" />
+  </swiper-item>
+  <swiper-item>
+  <image src="/images/post/post-2@text.jpg" />
+  </swiper-item>
+  <swiper-item>
+  <image src="/images/post/post-3@text.jpg" />
+  </swiper-item>
+</swiper>
+</view>
