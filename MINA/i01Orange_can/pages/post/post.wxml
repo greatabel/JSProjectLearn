@@ -11,3 +11,20 @@
   </swiper-item>
 </swiper>
 </view>
+
+<view class="post-container">
+ <view class="post-author-date">
+  <image src="/images/avatar/avatar-5.png" />
+  <text>Oct 02 2018</text>
+ </view>
+ <text class="post-title">小时候冰棍</text>
+ <text class="post-content">冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍
+ 冰棍冰棍冰棍冰棍...
+ </text>
+ <view class="post-like">
+  <image src="/images/icon/wx_app_collect.png" />
+  <text>108</text>
+  <image src="/images/icon/wx_app_message.png" />
+  <text>7</text>
+ </view>
+</view>
