@@ -29,3 +29,20 @@
   <text>7</text>
  </view>
 </view>
+
+<view class="post-container">
+ <view class="post-author-date">
+  <image src="/images/avatar/avatar-5.png" />
+  <text>Oct 03 2018</text>
+ </view>
+ <text class="post-title">小时候火车</text>
+ <image class="post-image" src="/images/post/post-1.jpg" mode="scaleToFill" />
+ <text class="post-content">火车火车火车火车火车火车火车火车火车火车火车火车火车火车火车...
+ </text>
+ <view class="post-like">
+  <image src="/images/icon/wx_app_collect.png" />
+  <text>109</text>
+  <image src="/images/icon/wx_app_message.png" />
+  <text>17</text>
+ </view>
+</view>
