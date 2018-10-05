@@ -5,6 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
+    date: "Oct 05 2018",
+    title: "小时候的冰棍儿和雪糕",
+    postImg: "/images/post/post-4.jpg",
+    avatar: "/images/avatar/avatar-5.png",
+    content: "冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍\
+ 冰棍冰棍冰棍冰棍...",
+    readingNum: 92,
+    collectionNum: 108,
+    commentNum: 7
 
   },
 

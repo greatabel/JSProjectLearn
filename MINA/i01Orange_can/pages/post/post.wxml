@@ -14,19 +14,18 @@
 
 <view class="post-container">
  <view class="post-author-date">
-  <image src="/images/avatar/avatar-5.png" />
-  <text>Oct 02 2018</text>
+  <image src="{{avatar}}" />
+  <text>{{date}}</text>
  </view>
- <text class="post-title">小时候冰棍</text>
- <image class="post-image" src="/images/post/post-4.jpg" mode="scaleToFill" />
- <text class="post-content">冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍
- 冰棍冰棍冰棍冰棍...
+ <text class="post-title">{{title}}</text>
+ <image class="post-image" src="{{ postImg }}" mode="scaleToFill" />
+ <text class="post-content">{{content}}
  </text>
  <view class="post-like">
   <image src="/images/icon/wx_app_collect.png" />
-  <text>108</text>
+  <text>{{collectionNum}}</text>
   <image src="/images/icon/wx_app_message.png" />
-  <text>7</text>
+  <text>{{readingNum}}</text>
  </view>
 </view>
 
