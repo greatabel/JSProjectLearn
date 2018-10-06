@@ -26,11 +26,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("onload")
+    var iceCreamData = {
+      object: {
+        date: 'Oct 06 2018'
+      },
+      title: "新的小时候冰棍儿",
+      postImg: "/images/post/post-4.jpg",
+      avatar: "/images/avatar/avatar-5.png",
+      content: "冰棍#冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍冰棍\
+ 冰棍冰棍冰棍冰棍#...",
+      readingNum: 92,
+      collectionNum: {
+        array: [103]
+      },
+      commentNum: 7
+    }
     this.setData({
-      title: "一根雪糕🍦的经济学原理",
-      "collectionNum.array[0]": 66,
-      "object.date": 'Oct 06 2018'
+      postData: iceCreamData
     })
   },
 

@@ -15,17 +15,17 @@
 <view class="post-container">
  <view class="post-author-date">
   <image src="{{avatar}}" />
-  <text>{{object.date}}</text>
+  <text>{{postData.object.date}}</text>
  </view>
- <text class="post-title">{{title}}</text>
- <image class="post-image" src="{{ postImg }}" mode="scaleToFill" />
- <text class="post-content">{{content}}
+ <text class="post-title">{{postData.title}}</text>
+ <image class="post-image" src="{{ postData.postImg }}" mode="scaleToFill" />
+ <text class="post-content">{{postData.content}}
  </text>
  <view class="post-like">
   <image src="/images/icon/wx_app_collect.png" />
-  <text>{{collectionNum.array[0]}}</text>
+  <text>{{postData.collectionNum.array[0]}}</text>
   <image src="/images/icon/wx_app_message.png" />
-  <text>{{readingNum}}</text>
+  <text>{{postData.readingNum}}</text>
  </view>
 </view>
 
