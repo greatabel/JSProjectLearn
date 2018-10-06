@@ -15,7 +15,7 @@
 <view class="post-container">
  <view class="post-author-date">
   <image src="{{avatar}}" />
-  <text>{{date}}</text>
+  <text>{{object.date}}</text>
  </view>
  <text class="post-title">{{title}}</text>
  <image class="post-image" src="{{ postImg }}" mode="scaleToFill" />
@@ -23,7 +23,7 @@
  </text>
  <view class="post-like">
   <image src="/images/icon/wx_app_collect.png" />
-  <text>{{collectionNum}}</text>
+  <text>{{collectionNum.array[0]}}</text>
   <image src="/images/icon/wx_app_message.png" />
   <text>{{readingNum}}</text>
  </view>
