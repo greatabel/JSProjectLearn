@@ -12,36 +12,21 @@
 </swiper>
 </view>
 
-<view class="post-container">
- <view class="post-author-date">
-  <image src="{{avatar}}" />
-  <text>{{postData.object.date}}</text>
- </view>
- <text class="post-title">{{postData.title}}</text>
- <image class="post-image" src="{{ postData.postImg }}" mode="scaleToFill" />
- <text class="post-content">{{postData.content}}
- </text>
- <view class="post-like">
-  <image src="/images/icon/wx_app_collect.png" />
-  <text>{{postData.collectionNum.array[0]}}</text>
-  <image src="/images/icon/wx_app_message.png" />
-  <text>{{postData.readingNum}}</text>
- </view>
-</view>
-
-<view class="post-container">
- <view class="post-author-date">
-  <image src="/images/avatar/avatar-5.png" />
-  <text>Oct 03 2018</text>
- </view>
- <text class="post-title">小时候火车</text>
- <image class="post-image" src="/images/post/post-1.jpg" mode="scaleToFill" />
- <text class="post-content">火车火车火车火车火车火车火车火车火车火车火车火车火车火车火车...
- </text>
- <view class="post-like">
-  <image src="/images/icon/wx_app_collect.png" />
-  <text>109</text>
-  <image src="/images/icon/wx_app_message.png" />
-  <text>17</text>
- </view>
-</view>
+<block wx:for = "{{ postList }}" wx:for-item="item" wx:for-index="idx">
+  <view class="post-container">
+  <view class="post-author-date">
+    <image src="{{avatar}}" />
+    <text>{{item.object.date}}</text>
+  </view>
+  <text class="post-title">{{item.title}}</text>
+  <image class="post-image" src="{{ item.postImg }}" mode="scaleToFill" />
+  <text class="post-content">{{item.content}}
+  </text>
+  <view class="post-like">
+    <image src="/images/icon/wx_app_collect.png" />
+    <text>{{item.collectionNum.array[0]}}</text>
+    <image src="/images/icon/wx_app_message.png" />
+    <text>{{item.readingNum}}</text>
+  </view>
+  </view>
+</block>

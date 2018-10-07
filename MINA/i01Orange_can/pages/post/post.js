@@ -41,8 +41,24 @@ Page({
       },
       commentNum: 7
     }
+    var trainData = {
+      object: {
+        date: 'Oct 07 2018'
+      },
+      title: "新的小时候火车",
+      postImg: "/images/post/post-1.jpg",
+      avatar: "/images/avatar/avatar-3.png",
+      content: "火车火车火车火车火车火车\
+ 火车火车火车火车火车#...",
+      readingNum: 93,
+      collectionNum: {
+        array: [104]
+      },
+      commentNum: 9
+    }
+    var postList = [iceCreamData, trainData]
     this.setData({
-      postData: iceCreamData
+      postList: postList
     })
   },
 
