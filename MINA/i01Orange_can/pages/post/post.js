@@ -1,5 +1,7 @@
 // var dataObj = require("../../data/data.js")
-var DBPost = require('../../db/DBPost.js').DBPost;
+// var DBPost = require('../../db/DBPost.js').DBPost;
+import {DBPost} from '../../db/DBPost.js';
+
 // pages/post/post.js
 Page({
 
