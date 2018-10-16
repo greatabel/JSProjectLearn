@@ -1,4 +1,5 @@
-var dataObj = require("../../data/data.js")
+// var dataObj = require("../../data/data.js")
+var DBPost = require('../../db/DBPost.js').DBPost;
 // pages/post/post.js
 Page({
 
@@ -59,8 +60,9 @@ Page({
 //       commentNum: 9
 //     }
 //     var postList = [iceCreamData, trainData]
+    var dbPost = new DBPost();
     this.setData({
-      postList: dataObj.postList
+      postList: dbPost.getAllPostData()
     })
   },
 
