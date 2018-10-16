@@ -1,4 +1,5 @@
-// pages/post/post-detail/post-detail.js
+import { DBPost } from '../../../db/DBPost.js';
+
 Page({
 
   /**
@@ -14,6 +15,12 @@ Page({
   onLoad: function (options) {
     var postId = options.id;
     console.log('received:' + postId)
+    this.dbPost = new DBPost(postId);
+    this.postData = this.dbPost.getPostItemById().data;
+    console.log("this.postData=", this.postData)
+    this.setData({
+      post: this.postData
+    })
   },
 
   /**

@@ -21,8 +21,9 @@
 //   DBPost: DBPost
 // };
 class DBPost {
-  constructor(url){
+  constructor(postId){
     this.storageKeyName = 'postList';
+    this.postId = postId;
   }
 
   getAllPostData(){
@@ -32,6 +33,19 @@ class DBPost {
       this.execSetStorageSync(res);
     }
     return res;
+  }
+
+  getPostItemById(){
+    var postData = this.getAllPostData()
+    var len = postData.length;
+    for(var i=0;i<len;i++){
+      if(postData[i].postId == this.postId){
+        return {
+          index: i,
+          data: postData[i]
+        }
+      }
+    }
   }
 
   execSetStorageSync(data){
