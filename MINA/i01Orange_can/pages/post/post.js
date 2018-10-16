@@ -118,7 +118,7 @@ Page({
   },
   onTapToDetail(event){
     var postId = event.currentTarget.dataset.postId;
-    console.log(postId)
+
     wx.navigateTo({
       url: "post-detail/post-detail?id=" + postId,
     })
