@@ -115,5 +115,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  onTapToDetail(event){
+    wx.navigateTo({
+      url: "post-detail/post-detail"
+    })
   }
 })
