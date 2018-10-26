@@ -100,6 +100,13 @@ Page({
       'post.upStatus': newData.upStatus,
       'post.upNum': newData.upNum
     })
-  }
+  },
+
+  onCommentTap: function (event) {
+    var id = event.currentTarget.dataset.postId;
+    wx.navigateTo({
+      url: '../post-comment/post-comment?id=' + id
+    })
+  },
 
 })
