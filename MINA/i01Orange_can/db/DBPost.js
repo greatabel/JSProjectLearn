@@ -31,6 +31,11 @@ class DBPost {
     return this.updatePostData('collect');
   }
 
+  up() {
+    return this.updatePostData('up');
+
+  }
+
   updatePostData(category, newComment){
     var itemData = this.getPostItemById(),
       postData = itemData.data,
@@ -45,6 +50,15 @@ class DBPost {
           // 如果当前状态是收藏
           postData.collectionNum--;
           postData.collectionStatus = false;
+        }
+        break;
+      case 'up':
+        if(!postData.upStatus){
+          postData.upNum++;
+          postData.upStatus = true;
+        } else {
+          postData.upNum--;
+          postData.upStatus = false;
         }
         break;
       default:

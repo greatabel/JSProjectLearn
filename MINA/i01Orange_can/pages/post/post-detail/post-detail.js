@@ -92,5 +92,10 @@ Page({
       icon: "success",
       mask: true
     })
+  },
+
+  onCommentTap: function(event){
+
   }
+
 })
