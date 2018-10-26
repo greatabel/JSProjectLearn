@@ -26,6 +26,35 @@ class DBPost {
     this.postId = postId;
   }
 
+  //收藏
+  collect() {
+    return this.updatePostData('collect');
+  }
+
+  updatePostData(category, newComment){
+    var itemData = this.getPostItemById(),
+      postData = itemData.data,
+      allPostData = this.getAllPostData();
+    switch(category){
+      case 'collect':
+        if (!postData.collectionStatus) {
+          //如果当前状态是未收藏
+          postData.collectionNum++;
+          postData.collectionStatus = true;
+        } else {
+          // 如果当前状态是收藏
+          postData.collectionNum--;
+          postData.collectionStatus = false;
+        }
+        break;
+      default:
+        break;
+    }
+    allPostData[itemData.index] = postData;
+    this.execSetStorageSync(allPostData);
+    return postData;
+  }
+
   getAllPostData(){
     var res = wx.getStorageSync(this.storageKeyName);
     if(!res){

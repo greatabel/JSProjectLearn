@@ -1,6 +1,3 @@
-
-
-
  <template name="postItemTpl">
  <view class="post-container">
       <view class="post-author-date">
