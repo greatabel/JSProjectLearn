@@ -17,10 +17,12 @@
      <image animation="{{animationUp}}" wx:else src="/images/icon/wx_app_like.png" />
     <text>{{post.upNum}}</text>
   </view>
+
   <view class="tool-item comment" catchtap="onCommentTap" data-post-id="{{post.postId}}">
     <image src="/images/icon/wx_app_message.png"></image>
     <text>{{post.commentNum}}</text>
   </view>
+
   <view class="tool-item" catchtap="onCollectionTap" data-post-id="{{post.postId}}">
     <image wx:if="{{post.collectionStatus}}" src="/images/icon/wx_app_collected.png" />
     <image wx:else src="/images/icon/wx_app_collect.png" />

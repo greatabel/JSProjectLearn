@@ -94,8 +94,12 @@ Page({
     })
   },
 
-  onCommentTap: function(event){
-
+  onUpTap: function(event){
+    var newData = this.dbPost.up()
+    this.setData({
+      'post.upStatus': newData.upStatus,
+      'post.upNum': newData.upNum
+    })
   }
 
 })
