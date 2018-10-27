@@ -85,5 +85,13 @@ Page({
     })
   },
 
+
+  //切换语音和键盘输入
+  switchInputType: function (event) {
+    this.setData({
+      useKeyboardFlag: !this.data.useKeyboardFlag
+    })
+  },
+
   
 })
