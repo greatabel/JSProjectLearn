@@ -93,5 +93,18 @@ Page({
     })
   },
 
+  bindCommentInput: function(event){
+    var value = event.detail.value;
+    var pos = event.detail.cursor;
+    if(pos!= -1){
+      var left = event.detail.value.slice(0, pos)
+      console.log(left)
+      pos = left.replace(/qq/g, '*').length
+    }
+    return {
+      value: value.replace(/qq/g, '*'),
+      cursor: pos
+    }
+  }
   
 })
