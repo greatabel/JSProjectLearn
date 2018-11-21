@@ -39,6 +39,11 @@ class DBPost {
 
   }
 
+  /*发表评论*/
+  newComment(newComment) {
+    this.updatePostData('comment', newComment);
+  }
+
   updatePostData(category, newComment){
     var itemData = this.getPostItemById(),
       postData = itemData.data,
@@ -63,6 +68,10 @@ class DBPost {
           postData.upNum--;
           postData.upStatus = false;
         }
+        break;
+      case 'comment':
+        postData.comments.push(newComment);
+        postData.commentNum++;
         break;
       default:
         break;

@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    keyboardInputValue: '',
+    chooseFiles: [],
   },
 
   /**
@@ -101,10 +102,66 @@ Page({
       console.log(left)
       pos = left.replace(/qq/g, '*').length
     }
+    this.data.keyboardInputValue = value;
     return {
       value: value.replace(/qq/g, '*'),
       cursor: pos
     }
-  }
+  },
+
+  submitComment: function (event) {
+    var imgs = this.data.chooseFiles;
+    var newData = {
+      username: "青石",
+      avatar: "/images/avatar/avatar-3.png",
+      create_time: new Date().getTime() / 1000,
+      content: {
+        txt: this.data.keyboardInputValue,
+        img: imgs
+      },
+    };
+    if (!newData.content.txt && imgs.length === 0) {
+      console.log('submitComment0')
+      return;
+    }
+    console.log('submitComment1')
+    //保存新评论到缓存数据库中
+    this.dbPost.newComment(newData);
+
+    //显示操作结果
+    this.showCommitSuccessToast();
+    //重新渲染并绑定所有评论
+    this.bindCommentData();
+    //恢复初始状态
+    this.resetAllDefaultStatus();
+
+  },
+  //评论成功
+  showCommitSuccessToast: function () {
+    //显示操作结果
+    wx.showToast({
+      title: "评论成功",
+      duration: 1000,
+      icon: "success"
+    })
+  },
+  bindCommentData: function () {
+    var comments = this.dbPost.getCommentData();
+    // 绑定评论数据
+    this.setData({
+      comments: comments
+    });
+  },
+
+  //将所有相关的按钮状态，输入状态都回到初始化状态
+  resetAllDefaultStatus: function () {
+    //清空评论框
+    this.setData({
+      keyboardInputValue: '',
+      chooseFiles: [],
+      sendMoreMsgFlag: false
+    });
+  },
+
   
 })
