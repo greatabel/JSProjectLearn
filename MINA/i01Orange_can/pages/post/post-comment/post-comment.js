@@ -269,4 +269,35 @@ Page({
     //重新渲染并绑定所有评论
     this.bindCommentData();
   },
+
+  playAudio: function (event) {
+    var url = event.currentTarget.dataset.url,
+      that = this;
+
+    //暂停当前录音
+    if (url == this.data.currentAudio) {
+      wx.pauseVoice();
+      this.data.currentAudio = ''
+    }
+
+    //播放录音
+    else {
+      this.data.currentAudio = url;
+      wx.playVoice({
+        filePath: url,
+        complete: function () {
+          //只有当录音播放完后才会执行
+          that.data.currentAudio = '';
+          console.log('complete')
+        },
+        success: function () {
+          console.log('success')
+        },
+        fail: function () {
+          console.log('fail')
+        }
+      });
+    }
+  }
+  
 })
