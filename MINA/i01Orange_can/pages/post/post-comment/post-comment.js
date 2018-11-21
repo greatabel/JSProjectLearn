@@ -193,6 +193,21 @@ Page({
       }
     })
   },
+  //删除已经选择的图片
+  deleteImage: function (event) {
+    var index = event.currentTarget.dataset.idx,
+      that = this;
+    that.setData({
+      deleteIndex: index
+    });
+    that.data.chooseFiles.splice(index, 1);
+    setTimeout(function () {
+      that.setData({
+        deleteIndex: -1,
+        chooseFiles: that.data.chooseFiles
+      });
+    }, 500)
+  },
 
 
   
