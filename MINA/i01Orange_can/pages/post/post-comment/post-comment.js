@@ -240,7 +240,11 @@ Page({
   },
 
   recordEnd: function () {
-
+    this.setData({
+      recodingClass: ''
+    });
+    this.endTime = new Date();
+    wx.stopRecord();
   },
 
   //提交录音 
