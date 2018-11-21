@@ -6,9 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+    useKeyboardFlag: true,
     keyboardInputValue: '',
+    sendMoreMsgFlag: false,
     chooseFiles: [],
-    sendMoreMsgFlag: false
+    deleteIndex: -1,
+    currentAudio: ''
   },
 
   /**
