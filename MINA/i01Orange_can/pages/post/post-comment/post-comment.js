@@ -8,6 +8,7 @@ Page({
   data: {
     keyboardInputValue: '',
     chooseFiles: [],
+    sendMoreMsgFlag: false
   },
 
   /**
@@ -161,6 +162,12 @@ Page({
       chooseFiles: [],
       sendMoreMsgFlag: false
     });
+  },
+  //显示 选择照片、拍照等按钮
+  sendMoreMsg: function () {
+    this.setData({
+      sendMoreMsgFlag: !this.data.sendMoreMsgFlag
+    })
   },
 
   
