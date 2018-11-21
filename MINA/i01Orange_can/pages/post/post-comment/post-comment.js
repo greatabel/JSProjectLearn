@@ -169,6 +169,31 @@ Page({
       sendMoreMsgFlag: !this.data.sendMoreMsgFlag
     })
   },
+  //选择本地照片与拍照
+  chooseImage: function (event) {
+    // 已选择图片数组
+    var imgArr = this.data.chooseFiles;
+    //只能上传3张照片，包括拍照
+    var leftCount = 3 - imgArr.length;
+    if (leftCount <= 0) {
+      return;
+    }
+    var sourceType = [event.currentTarget.dataset.category],
+      that = this;
+    console.log(leftCount)
+    wx.chooseImage({
+      count: leftCount,
+      sourceType: sourceType,
+      success: function (res) {
+        // 可以分次选择图片，但总数不能超过3张
+        console.log(res)
+        that.setData({
+          chooseFiles: imgArr.concat(res.tempFilePaths)
+        });
+      }
+    })
+  },
+
 
   
 })
