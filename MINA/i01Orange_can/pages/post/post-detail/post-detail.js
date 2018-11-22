@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isPlayingMusic: false
   },
 
   /**
@@ -114,5 +114,10 @@ Page({
   addReadingTimes: function () {
     this.dbPost.addReadingTimes();
   },
+  onMusicTap: function(event) {
+    this.setData({
+      isPlayingMusic: !this.data.isPlayingMusic
+    })
+  }
 
 })
