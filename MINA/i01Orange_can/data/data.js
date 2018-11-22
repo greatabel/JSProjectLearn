@@ -12,9 +12,9 @@ var postList = [{
     detail: "冰棍与雪糕绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的 冰棍儿就像现在的老冰棒。时过境迁，当年的老冰棍也随着童年的记忆消失不见踪影。记得小时候，每当傍晚时分，总有一个老人推着一辆小车，小车的后架上放着一个大大的白色泡沫盒子。老人一边推着车，一边叫喊着：雪糕、冰棍...",
     postId: 1,
     music: {
-        url: "http://ws.stream.qqmusic.qq.com/C100001Dc80Z3qPj2Z.m4a?fromtag=38",
-        title: "罗大佑 恋曲1980",
-        coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003cWU1M2qNwxZ.jpg?max_age=2592000",
+      url: "http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46",
+      title: "此时此刻",
+      coverImg: "http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000",
     },
     collectionStatus: true,
     upStatus: false,

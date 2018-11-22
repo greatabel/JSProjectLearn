@@ -115,9 +115,24 @@ Page({
     this.dbPost.addReadingTimes();
   },
   onMusicTap: function(event) {
-    this.setData({
-      isPlayingMusic: !this.data.isPlayingMusic
-    })
+    
+    if(this.data.isPlayingMusic){
+      wx.pauseBackgroundAudio();
+      this.setData({
+        isPlayingMusic: false
+      })
+    } else {
+      console.log('playBackgroundAudio ' + this.postData.music.url)
+      wx.playBackgroundAudio({
+        dataUrl: this.postData.music.url,
+        title: this.postData.music.title,
+        coverImgUrl: this.postData.music.coverImg
+      })
+      this.setData({
+        isPlayingMusic: true
+      })
+    }
+
   }
 
 })
