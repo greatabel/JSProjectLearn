@@ -52,6 +52,10 @@ Page({
    */
   onUnload: function () {
     console.log('page is onUnload')
+    wx.stopBackgroundAudio()
+    this.setData({
+      isPlayingMusic: false
+    })
   },
 
   /**
