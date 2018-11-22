@@ -35,9 +35,9 @@ var postList = [{
     detail: "小时候，家的后面有一条铁路。听说从南方北上的火车都必须经过这条铁路。火车大多在晚上经过，可呜呜的汽笛声，往往却被淹没在傍晚小院儿里散步的人群声中。只有在夜深人静的时候，火车的声音才能清晰的从远处飘过来。虽然日日听见火车的汽笛声，可说也奇怪，我竟从来不知道铁路在哪里。在每个夏日午后，我都会有一种去找寻找铁路的冲动，去看看这条铁路究竟是从哪里来，又将通向哪里去",
     postId: 2,
     music: {
-        url: "http://ws.stream.qqmusic.qq.com/C100004VybKS2SpZVL.m4a?fromtag=38",
-        title: "齐秦 原来的我",
-        coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000003ZvAeK2PgA4Y.jpg?max_age=2592000"
+      url: "http://116.211.73.15/amobile.music.tc.qq.com/C400004BGCbx08ppvI.m4a?guid=3892445539&vkey=1C2E09569BF5D9ED967CC86C5837D0CB211BD01DE88D02DB07BC933BF9FCEC4E664367491C5B4FB37087ECE23BB35F76649F9BD42B1AF210&uin=0&fromtag=66",
+      title: "少年时",
+      coverImg: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000019ztCF1wyheA.jpg?max_age=2592000"
     },
     collectionStatus: true,
     upStatus: true,
