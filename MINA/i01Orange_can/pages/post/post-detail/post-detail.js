@@ -21,6 +21,7 @@ Page({
     this.setData({
       post: this.postData
     })
+    this.addReadingTimes();
   },
 
   /**
@@ -107,6 +108,11 @@ Page({
     wx.navigateTo({
       url: '../post-comment/post-comment?id=' + id
     })
+  },
+
+  //阅读量+1
+  addReadingTimes: function () {
+    this.dbPost.addReadingTimes();
   },
 
 })
