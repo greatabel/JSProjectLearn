@@ -1,5 +1,8 @@
 import { DBPost } from '../../../db/DBPost.js';
 
+var app = getApp();
+console.log('app=', app)
+
 Page({
 
   /**
@@ -23,6 +26,7 @@ Page({
     })
     this.addReadingTimes();
     this.setMusicMonitor();
+    this.initMusicStatus();
   },
 
   /**
@@ -51,13 +55,15 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-    console.log('page is onUnload')
-    wx.stopBackgroundAudio()
-    this.setData({
-      isPlayingMusic: false
-    })
-  },
+  // onUnload: function () {
+  //   console.log('page is onUnload')
+  //   wx.stopBackgroundAudio()
+  //   this.setData({
+  //     isPlayingMusic: false
+  //   })
+  //   console.log('onUnload app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
+
+  // },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -126,6 +132,8 @@ Page({
       this.setData({
         isPlayingMusic: false
       })
+      app.globalData.g_isPlayingMusic = false;
+
     } else {
       console.log('playBackgroundAudio ' + this.postData.music.url)
       wx.playBackgroundAudio({
@@ -136,7 +144,11 @@ Page({
       this.setData({
         isPlayingMusic: true
       })
+      app.globalData.g_isPlayingMusic = true;
+
+
     }
+    console.log('onMusicTap app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
 
   },
   setMusicMonitor: function(){
@@ -145,8 +157,15 @@ Page({
       that.setData({
         isPlayingMusic: false
       })
+      app.globalData.g_isPlayingMusic = false;
+      console.log('setMusicMonitor app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
+    })
+  },
 
+  initMusicStatus() {
+    console.log('initMusicStatus app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
+    this.setData({
+      isPlayingMusic: app.globalData.g_isPlayingMusic
     })
   }
-
 })
