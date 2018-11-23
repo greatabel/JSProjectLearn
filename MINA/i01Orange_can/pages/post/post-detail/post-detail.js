@@ -22,6 +22,7 @@ Page({
       post: this.postData
     })
     this.addReadingTimes();
+    this.setMusicMonitor();
   },
 
   /**
@@ -137,6 +138,15 @@ Page({
       })
     }
 
+  },
+  setMusicMonitor: function(){
+    var that = this;
+    wx.onBackgroundAudioStop(function (){
+      that.setData({
+        isPlayingMusic: false
+      })
+
+    })
   }
 
 })
