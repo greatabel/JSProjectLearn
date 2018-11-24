@@ -145,6 +145,7 @@ Page({
         isPlayingMusic: true
       })
       app.globalData.g_isPlayingMusic = true;
+      app.globalData.g_currentMusicPostId = this.postData.postId;
 
 
     }
@@ -163,9 +164,18 @@ Page({
   },
 
   initMusicStatus() {
-    console.log('initMusicStatus app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
-    this.setData({
-      isPlayingMusic: app.globalData.g_isPlayingMusic
-    })
+    // console.log('initMusicStatus app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
+    var currentPostId = this.postData.postId;
+    if(app.globalData.g_isPlayingMusic 
+    && app.globalData.g_currentMusicPostId === currentPostId){
+      this.setData({
+        isPlayingMusic: true
+      })
+    } else {
+      this.setData({
+        isPlayingMusic:false
+      })
+    }
+
   }
 })
