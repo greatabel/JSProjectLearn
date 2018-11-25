@@ -159,8 +159,29 @@ Page({
         isPlayingMusic: false
       })
       app.globalData.g_isPlayingMusic = false;
-      console.log('setMusicMonitor app.globalData.g_isPlayingMusic ', app.globalData.g_isPlayingMusic)
+
     })
+
+    wx.onBackgroundAudioPlay(function (event) {
+      // 只处理当前页面的音乐播放。
+      if (app.globalData.g_currentMusicPostId === that.postData.postId) {
+        that.setData({
+          isPlayingMusic: true
+        })
+      }
+      app.globalData.g_isPlayingMusic = true;
+    });
+
+    wx.onBackgroundAudioPause(function () {
+      // 只处理当前页面的音乐暂停。
+      if (app.globalData.g_currentMusicPostId == that.postData.postId) {
+        that.setData({
+          isPlayingMusic: false
+        })
+      }
+      app.globalData.g_isPlayingMusic = false;
+    });
+    
   },
 
   initMusicStatus() {
