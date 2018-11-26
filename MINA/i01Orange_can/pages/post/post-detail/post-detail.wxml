@@ -1,5 +1,5 @@
 <view class="container">
- <image class="head-image" src="{{ post.postImg }}"></image>
+ <image class="head-image" src="{{ isPlayingMusic? post.music.coverImg: post.postImg }}"></image>
 
 <image catchtap='onMusicTap' class="music"
  src="{{isPlayingMusic?'/images/icon/wx_app_music_stop.png':'/images/icon/wx_app_music_start.png'}}">
