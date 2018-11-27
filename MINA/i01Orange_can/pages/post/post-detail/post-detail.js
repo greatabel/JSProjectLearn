@@ -198,5 +198,14 @@ Page({
       })
     }
 
+  },
+
+  onShareAppMessage: function () {
+    return {
+      title: this.postData.title,
+      desc: this.postData.content,
+      path: "/pages/post/post-detail/post-detail?id=" + this.postId
+    }
   }
+
 })
