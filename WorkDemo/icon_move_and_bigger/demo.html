@@ -1,13 +1,37 @@
 <html>
 <head>
 <title> demo </title>
+<style>
+
+.btn-social {
+    width: 25px;
+    position: relative;
+    opacity: 1;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-social:hover {
+    opacity: 1;
+
+    /** default is 1, scale it to 1.5 */
+    transform: scale(1.5, 1.5);
+
+    /** translate 50px from left, and 40px from top */
+    /** transform: translate(50px, 40px); */
+
+    /** combine both scale and translate */
+    /** transform: scale(1.5, 1.5) translate(50px, 40px); */
+}
+
+</style>
 </head>
 <body>
 
-<div id="axis" class="one">
-<img class="object van move-right" src="icon0.png"/>
-
-<img class="object van move-right" src="icon1.png"/>
+<div>
+<img  class="btn-social" width="25" height="25" src="icon0.png"/>
+&nbsp;&nbsp;&nbsp;
+<img class="" width="25" height="25" src="icon1.png"/>
 </div>
 
 </body>
