@@ -4,6 +4,8 @@
 <style>
 /* 
 https://stackoverflow.com/questions/14971697/css-mouse-hover-change-image-position-and-size
+
+https://stackoverflow.com/questions/34342320/how-to-move-div-elements-a-little-to-the-left
 */
 
 .btn-social {
@@ -27,14 +29,25 @@ https://stackoverflow.com/questions/14971697/css-mouse-hover-change-image-positi
     /** transform: scale(1.5, 1.5) translate(50px, 40px); */
 }
 
+
+.btn-social:hover {
+    margin-left: 20px;    
+  transition: margin-left .5s;
+  -moz-transition: margin-left .5s; /* Firefox 4 */
+  -webkit-transition: margin-left .5s; /* Safari and Chrome */
+  -o-transition: margin-left .5s; /* Opera */
+}
+
 </style>
 </head>
 <body>
 
 <div>
-<img  class="btn-social" width="25" height="25" src="icon0.png"/>
-&nbsp;&nbsp;&nbsp;
+
 <img class="" width="25" height="25" src="icon1.png"/>
+    &nbsp;&nbsp;&nbsp;
+<img  class="btn-social" width="25" height="25" src="icon0.png"/>
+
 </div>
 
 </body>
