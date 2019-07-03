@@ -25,7 +25,7 @@
       "selectedIconPath": "images/icon/wx_app_news@HL.png"
     }, {
       "pagePath": "pages/movie/movie",
-      "text": "电影",
+      "text": "光影",
       "iconPath": "images/icon/wx_app_movie.png",
       "selectedIconPath": "images/icon/wx_app_movie@HL.png"
     }]
