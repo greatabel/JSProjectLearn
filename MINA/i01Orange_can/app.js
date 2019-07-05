@@ -25,6 +25,7 @@ App({
   },
   globalData: {
     g_isPlayingMusic: false,
-    g_currentMusicPostId: null
+    g_currentMusicPostId: null,
+    doubanBase: "https://12.0.0.1/douban_api"
   }
 })
