@@ -12,7 +12,7 @@ var postList = [{
     detail: "冰棍与雪糕绝对不是同一个东西。3到5毛钱的雪糕犹如现在的哈根达斯，而5分1毛的 冰棍儿就像现在的老冰棒。时过境迁，当年的老冰棍也随着童年的记忆消失不见踪影。记得小时候，每当傍晚时分，总有一个老人推着一辆小车，小车的后架上放着一个大大的白色泡沫盒子。老人一边推着车，一边叫喊着：雪糕、冰棍...",
     postId: 1,
     music: {
-      url: "http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46",
+      url: "http://mm1.doubanio.com/202003121540/3e517a7bc4a0c7e043add155b271a2dc/view/musicianmp3/mp3/x19572527.mp3",
       title: "此时此刻",
       coverImg: "http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000",
     },
@@ -35,7 +35,7 @@ var postList = [{
     detail: "小时候，家的后面有一条铁路。听说从南方北上的火车都必须经过这条铁路。火车大多在晚上经过，可呜呜的汽笛声，往往却被淹没在傍晚小院儿里散步的人群声中。只有在夜深人静的时候，火车的声音才能清晰的从远处飘过来。虽然日日听见火车的汽笛声，可说也奇怪，我竟从来不知道铁路在哪里。在每个夏日午后，我都会有一种去找寻找铁路的冲动，去看看这条铁路究竟是从哪里来，又将通向哪里去",
     postId: 2,
     music: {
-      url: "http://116.211.73.15/amobile.music.tc.qq.com/C400004BGCbx08ppvI.m4a?guid=3892445539&vkey=1C2E09569BF5D9ED967CC86C5837D0CB211BD01DE88D02DB07BC933BF9FCEC4E664367491C5B4FB37087ECE23BB35F76649F9BD42B1AF210&uin=0&fromtag=66",
+      url: "http://mr3.doubanio.com/647ad3c08645fcd49ef1487f92d4a275/0/fm/song/p1564175_64k.mp3",
       title: "少年时",
       coverImg: "https://y.gtimg.cn/music/photo_new/T002R300x300M0000019ztCF1wyheA.jpg?max_age=2592000"
     },
@@ -98,7 +98,7 @@ var postList = [{
     detail: "年少时，有几样东西，是春节里必不可少的：烟花、新衣、凉菜、压岁钱、饺子。年分大小年，有的地方是腊月二十三过小年，而有的地方是腊月二十四。童年的春节都是在小县城里度过，那时候的冬天还很冷，池塘的水会结冰，房屋上总是倒挂着一条条的冰棱，菜地里的白菜被厚厚的积雪覆盖着，只露出一小撮白绿相间的菜头，而茎部，竟然像是没有了一般...",
     postId: 3,
     music: {
-        url: "http://ws.stream.qqmusic.qq.com/C100003XYcCu3IZKLc.m4a?fromtag=38",
+      url: "http://ws.stream.qqmusic.qq.com/C400003mAan70zUy5O.m4a?guid=4651053520&vkey=3320479B01F912D44284A44F1619D216CF215FE811E3A8070C0DABF14693B82F86077F334B9C7EAEAE2C0BE8A81C3138BDDF4F461FC40DB6&uin=1703&fromtag=3&r=1779004606646739",
         title: "老狼 虎口脱险",
         coverImg: "http://y.gtimg.cn/music/photo_new/T002R150x150M000002sNbWp3royJG.jpg?max_age=2592000"
     },
