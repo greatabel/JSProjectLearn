@@ -1,1 +1,17 @@
-<view/>
+<import src="movie-list/movie-list-tpl.wxml" />
+
+<view class="container">
+
+  <view class="movie-template">
+    <template is="movieListTpl" data="{{..inTheaters}}"> </template>
+  </view>
+
+  <view class="movie-template">
+    <template is="movieListTpl" data="{{..comingSoon}}"> </template>
+  </view>
+
+  <view class="movie-template">
+    <template is="movieListTpl" data="{{..top250}}"> </template>
+  </view>
+
+</view>
