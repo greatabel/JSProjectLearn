@@ -17,7 +17,8 @@ Page({
       "/v2/movie/top250" + "?start=0&count=3"; 
 
     this.getMovieListData(inThreatersUrl, "inTheaters", "正在热映");
-    
+    this.getMovieListData(comingSoonUrl, "comingSoon", "即将上映");
+    this.getMovieListData(top250Url, "top250", "豆瓣Top250");  
   },
   getMovieListData: function (url, settedKey, categoryTitle) {
     var that = this;
