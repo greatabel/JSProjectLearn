@@ -3,15 +3,15 @@
 <view class="container">
 
   <view class="movie-template">
-    <template is="movieListTpl" data="{{..inTheaters}}"> </template>
+    <template is="movieListTpl" data="{{...inTheaters}}"> </template>
   </view>
 
   <view class="movie-template">
-    <template is="movieListTpl" data="{{..comingSoon}}"> </template>
+    <template is="movieListTpl" data="{{...comingSoon}}"> </template>
   </view>
 
   <view class="movie-template">
-    <template is="movieListTpl" data="{{..top250}}"> </template>
+    <template is="movieListTpl" data="{{...top250}}"> </template>
   </view>
 
 </view>

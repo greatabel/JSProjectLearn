@@ -18,21 +18,19 @@ in_theaters_movies = {
 
 movies = {}
 
-@app.route("/mock_douban_api/in_theaters", methods=['GET'])
+@app.route("/v2/movie/in_theaters", methods=['GET'])
 def in_theaters():
     return jsonify({'data': in_theaters_movies})
 
-@app.route("/mock_douban_api/comming_soon", methods=['GET'])
+@app.route("/v2/movie/coming_soon", methods=['GET'])
 def comming_soon():
     return jsonify({'data': movies})
 
-@app.route("/mock_douban_api/top250", methods=['GET'])
+@app.route("/v2/movie/top250", methods=['GET'])
 def top250():
     return jsonify({'data': movies})
 
 
 
-
-# 使用httpie测试：http GET http://127.0.0.1:5000/recipes
 if __name__ == "__main__":
     app.run()
