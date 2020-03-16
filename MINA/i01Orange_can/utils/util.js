@@ -68,6 +68,27 @@ function getDiffTime(recordTime, yearsFlag) {
   };
 })()
 
+//将50、35、00等形式转化成[1,1,1,1,1]的形式
+function convertToStarsArray(stars) {
+  var num = stars / 10;
+  var array = [];
+  for (var i = 1; i <= 5; i++) {
+    if (i <= num) {
+      array.push(1);
+    }
+    else {
+      if ((i - num) === 0.5) {
+        array.push(0.5)
+      }
+      else {
+        array.push(0);
+      }
+    }
+  }
+  console.log('convertToStarsArray=', array)
+  return array;
+}
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -86,5 +107,6 @@ const formatNumber = n => {
 
 module.exports = {
   getDiffTime: getDiffTime,
-  formatTime: formatTime
+  formatTime: formatTime,
+  convertToStarsArray: convertToStarsArray,
 }

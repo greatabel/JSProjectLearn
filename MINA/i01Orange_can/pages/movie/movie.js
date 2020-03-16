@@ -9,6 +9,77 @@ Page({
     top250: {},
   },
   onLoad: function(event){
+    var inThreatersUrl = app.globalData.doubanBase +
+    "/v2/movie/in_theaters" + "?start=0&count=3";
+    var comingSoonUrl = app.globalData.doubanBase +
+      "/v2/movie/coming_soon" + "?start=0&count=3";
+    var top250Url = app.globalData.doubanBase +
+      "/v2/movie/top250" + "?start=0&count=3"; 
+
+    this.getMovieListData(inThreatersUrl, "inTheaters", "正在热映");
     
-  }
+  },
+  getMovieListData: function (url, settedKey, categoryTitle) {
+    var that = this;
+    wx.request({
+      url: url,
+      method: 'GET',
+      header: {
+        "content-type": "json"
+      },
+      success: function (res) {
+        that.processDoubanData(res.data, settedKey, categoryTitle)
+      },
+      fail: function (error) {
+        // 因为小程序后台只能把服务器域名设置为douban才能访问
+        // 我只能hardcode测试
+        var hardcodeData = {
+          "count": 20,
+          "start": 0,
+          "total": 38,
+          "subjects": [{
+            'id': 1325007, 'title': '蓝色星球 The Blue Planet', 'rating': { 'average': 4 },
+            'images': { 'large': 'https://img3.doubanio.com/view/photo/l/public/p2574122772.webp' },
+            'summary': '蓝色星球」是历年来首套全面探索海洋世界的自然历史专辑'
+          },
+          {
+            'id': 3041294, 'title': '生化危机4：战神再生', 'rating': { 'average': 4.5 },
+            'images': { 'large': 'https://img9.doubanio.com/view/photo/l/public/p564897015.webp' },
+            'summary': '爱丽丝（米拉·乔沃维奇 Milla Jovovich 饰）重回在东京，向安布雷拉公司复仇'
+          }],
+          "title": "正在上映的电影-深圳"
+        }
+        that.processDoubanData(hardcodeData, settedKey, categoryTitle)
+        console.log(error)
+      }
+    })
+  },
+
+  processDoubanData: function (moviesDouban, settedKey,
+    categoryTitle) {
+      var movies = [];
+    console.log(moviesDouban)
+    for (var idx in moviesDouban.subjects) {
+      var subject = moviesDouban.subjects[idx];
+      var title = subject.title;
+      if (title.length >= 6) {
+        title = title.substring(0, 6) + "...";
+      }
+      var temp = {
+        stars: util.convertToStarsArray(subject.rating.stars),
+        title: title,
+        average: subject.rating.average,
+        coverageUrl: subject.images.large,
+        movieId: subject.id
+      }
+      movies.push(temp)
+    }
+    var readyData = {};
+    readyData[settedKey] = {
+      categoryTitle: categoryTitle,
+      movies: movies
+    }
+    this.setData(readyData)
+  },
+
 })
