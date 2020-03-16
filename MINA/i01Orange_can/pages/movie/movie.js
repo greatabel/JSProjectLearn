@@ -38,16 +38,21 @@ Page({
           "start": 0,
           "total": 38,
           "subjects": [{
-            'id': 1325007, 'title': '蓝色星球 The Blue Planet', 'rating': { 'average': 4 },
+            'id': 1325007, 'title': '蓝色星球 The Blue Planet', 'rating': { 'average': 40, 'stars': 44 },
             'images': { 'large': 'https://img3.doubanio.com/view/photo/l/public/p2574122772.webp' },
             'summary': '蓝色星球」是历年来首套全面探索海洋世界的自然历史专辑'
           },
           {
-            'id': 3041294, 'title': '生化危机4：战神再生', 'rating': { 'average': 4.5 },
+            'id': 3041294, 'title': '生化危机4：战神再生', 'rating': { 'average': 45, 'stars': 45 },
             'images': { 'large': 'https://img9.doubanio.com/view/photo/l/public/p564897015.webp' },
             'summary': '爱丽丝（米拉·乔沃维奇 Milla Jovovich 饰）重回在东京，向安布雷拉公司复仇'
-          }],
-          "title": "正在上映的电影-深圳"
+            },
+            {
+              'id': 25814705, 'title': '小森林 夏秋篇', 'rating': { 'average': 45, 'stars': 49 },
+              'images': { 'large': 'https://img3.doubanio.com/view/photo/m/public/p2564498893.webp' },
+              'summary': '平凡女孩市子（桥本爱 饰）自幼生长在位于日本东北地区的村庄小森'
+            }],
+          "title": "正在上映的电影-武汉"
         }
         that.processDoubanData(hardcodeData, settedKey, categoryTitle)
         console.log(error)

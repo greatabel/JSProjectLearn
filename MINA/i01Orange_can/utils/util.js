@@ -73,6 +73,7 @@ function convertToStarsArray(stars) {
   var num = stars / 10;
   var array = [];
   for (var i = 1; i <= 5; i++) {
+
     if (i <= num) {
       array.push(1);
     }
@@ -85,7 +86,7 @@ function convertToStarsArray(stars) {
       }
     }
   }
-  console.log('convertToStarsArray=', array)
+
   return array;
 }
 
