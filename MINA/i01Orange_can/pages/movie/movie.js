@@ -114,5 +114,13 @@ Page({
     }
     )
   },
+  onBindConfirm: function (event) {
+    var keyWord = event.detail.value;
+    var searchUrl = app.globalData.doubanBase +
+      "/v2/movie/search?q=" + keyWord;
+    console.log('onBindConfirm');
+    this.getMovieListData(searchUrl, "searchResult", "");
+
+  }
 
 })
