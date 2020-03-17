@@ -7,6 +7,9 @@ Page({
     inTheaters: {},
     comingSoon: {},
     top250: {},
+    containerShow: true,
+    searchPanelShow: false,
+    searchResult: {},
   },
   onLoad: function(event){
     var inThreatersUrl = app.globalData.doubanBase +
@@ -93,6 +96,23 @@ Page({
     wx.navigateTo({
       url: "more-movie/more-movie?category=" + category
     })
-  }
+  },
+
+  onBindFocus: function (event) {
+    this.setData({
+      containerShow: false,
+      searchPanelShow: true
+    })
+  },
+
+  onCancelImgTap: function (event) {
+    this.setData({
+      containerShow: true,
+      searchPanelShow: false,
+      searchResult: {},
+      inputValue: ''
+    }
+    )
+  },
 
 })
