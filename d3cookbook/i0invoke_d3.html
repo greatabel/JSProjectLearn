@@ -1,0 +1,98 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Simple D3 Dev Env</title>
+<script type="text/javascript" src="d3/d3.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+
+
+
+</head>
+<body>
+
+<style>
+#chart div {
+  display: inline-block;
+  background: #4285F4;
+  width: 20px;
+  margin-right: 3px;
+}
+</style>
+
+<!-- <script>
+console.log('test0 start');
+
+// d3.select('#chart')
+//   .selectAll("div")
+//   .data([4, 8, 15, 16, 23, 42])
+//   .enter()
+//   .append("div")
+//   .style("height", (d)=> d + "px")
+
+console.log('test0 end');
+</script> -->
+
+<script type="text/javascript">
+    function SimpleWidget(spec) {
+        var instance = {}; // <-- A
+
+        var headline, description; // <-- B
+
+        instance.render = function () {
+            var div = d3.select('body').append("div");
+
+            div.append("h1").text(headline); // <-- C
+
+            div.attr("class", "box")
+               .attr("style", "color:" + spec.color) // <-- D
+               .append("p")
+                   .text(description); // <-- E
+
+            
+
+            return instance; // <-- F
+        };
+
+        instance.headline = function (h) {
+            if (!arguments.length) return headline; // <-- G
+            headline = h;
+            return instance; // <-- H
+        };
+
+        instance.description = function (d) {
+            if (!arguments.length) return description;
+            description = d;
+            return instance;
+        };
+
+        return instance; // <-- I
+    }
+
+    var widget = SimpleWidget({color: "#6495ed"})
+            .headline("Simple Widget")
+            .description("This is a simple widget demonstrating functional javascript.");
+    widget.render();
+
+    // wait id= chart is exist
+    $(function()
+        {
+        d3.select('#chart')
+          .selectAll("div")
+          .data([4, 8, 15, 16, 23, 42])
+          .enter()
+          .append("div")
+          .style("height", (d)=> d + "px");
+
+        });
+
+
+</script>
+
+<div id="chart"> 
+   </div>
+
+
+</body>
+</html>
