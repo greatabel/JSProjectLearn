@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Selection Iteration</title>
+<script type="text/javascript" src="d3/d3.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<link rel="stylesheet" type="text/css" href="css/styles.css"></script>
+</head>
+
+
+
+<body>
+
+<div></div>
+<div></div>
+<div></div>
+
+<script type="text/javascript">
+    d3.selectAll("div") // <-- A
+            .attr("class", "red box") // <-- B
+            .each(function (d, i) { // <-- C
+                // console.log(d);
+                d3.select(this).append("h1").text(i); // <-- D
+            });
+    d3.selectAll("h1")
+      .each(function (d, i) { // <-- C
+                // console.log(d);
+                d3.select(this).html("<b>Hello"+i+"</b>");
+            });
+</script>
+
+</body>
+</html>
