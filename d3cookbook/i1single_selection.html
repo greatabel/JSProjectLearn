@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Single Selection</title>
+
+<script type="text/javascript" src="d3/d3.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+<p id="target"></p> <!-- A -->
+
+<script type="text/javascript">
+    d3.select("p#target") // <-- B
+        .text("Hello world!"); // <-- C
+
+    d3.select("p").style("font-size", "10px");
+
+    var normalFontSize = 30;
+    d3.select("p"). style("font-size", function(){
+        return (normalFontSize+20)+'px';});
+
+    var p = d3.select('p').text();
+    console.log(p);
+
+    function retrieveModel() {
+        return 'retrieveModel test'
+    }
+
+    d3.select("p").text(function(){
+        var model=retrieveModel();
+        return model;
+        });
+
+    d3.select("p").html("<b>Hello</b>");
+    var p_html = d3.select("p").html();
+    console.log(p_html);
+
+</script>
+
+</body>
+</html>
