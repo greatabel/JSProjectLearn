@@ -7,3 +7,7 @@ if (t.match(regex)) {
 } else {
   alert("No match");
 }
+/*
+frame#data:text/javascript,alert('XSS')
+
+*/
