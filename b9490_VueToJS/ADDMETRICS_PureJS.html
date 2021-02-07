@@ -17,23 +17,34 @@
             <div class="flex">
                 <div class="box mr100">
                     <h1>Estimated</h1>
-                    <p class="spread">Condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information</p>
-                    <div class="flex" v-for="(item,index) in firstList" :key="index" style="margin-bottom: 10px">
-                        <input type="text" class="w40" v-model="item.name"/>
-                        <input type="text" class="h104" v-model="item.value">
-                    </div>
+
+                      <table id="0Table" border="1">
+                        <tr>
+                          <td>Condidtion</td>
+                          <td>Information</td>
+        
+                        </tr>
+                        <tr>
+
+                          <td><input size=25 type="text" id="latbox" /></td>
+                          <td><input size=25 type="text" id="lngbox" /></td>
+
+                        </tr>
+                      </table>
+
                     <br>
                     <div class="flex">
-                        <span @click="add('first')" class="btn btn-info" style="margin-bottom: 10px">Add Metric</span>
-                        <span @click="remove('first')" class="btn btn-info" style="margin-bottom: 10px">Remove Metric</span>
+                        <span onclick="insRow(0)" class="btn btn-info" style="margin-bottom: 10px">Add Metric</span>
+                        <span onclick="deleteRow(0)" class="btn btn-info" style="margin-bottom: 10px">Remove Metric</span>
                     </div>
                     <div class="hidden">
-                        <button @click="submit('first')" class="btn btn-info">Submit</button>
+                        <button  class="btn btn-info">Submit</button>
                     </div>
-                    <div class="resultBox" v-if="firstText">
+                    <div class="resultBox" v-if="secondText">
                         <h1>Result:</h1>
-                        <div v-html="firstText"></div>
+                        <div id="firstText"></div>
                     </div>
+
                 </div>
                 <div class="box">
                     <h1>Actual</h1>
@@ -63,6 +74,37 @@
 
 
 <script>
+var row_length  = 0;
+
+function deleteRow(type) {
+  // var i = row.parentNode.parentNode.rowIndex;
+  document.getElementById(type+'Table').deleteRow(row_length);
+  row_length -= 1;
+}
+
+
+function insRow(type) {
+  console.log('hi');
+  var x = document.getElementById(type+'Table');
+  var new_row = x.rows[1].cloneNode(true);
+  var len = x.rows.length;
+  row_length = len;
+  // new_row.cells[0].innerHTML = len;
+
+  // var inp1 = new_row.cells[1].getElementsByTagName('input')[0];
+  // inp1.id += len;
+  // inp1.value = '';
+  // var inp2 = new_row.cells[2].getElementsByTagName('input')[0];
+  // inp2.id += len;
+  // inp2.value = '';
+  x.appendChild(new_row);
+}
+
+
+
+var firstL = ['f0', 'f1']
+var secondL = ['s0', 's1']
+
 
 </script>
 </html>
