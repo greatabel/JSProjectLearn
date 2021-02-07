@@ -42,29 +42,40 @@
                     </div>
                     <div class="resultBox" v-if="secondText">
                         <h1>Result:</h1>
-                        <div id="firstText"></div>
+                        <label id="lbl0"></label>
                     </div>
 
                 </div>
                 <div class="box">
                     <h1>Actual</h1>
-                    <p class="spread">Condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information</p>
-                    <div class="flex" v-for="(item,index) in secondList" :key="index" style="margin-bottom: 10px">
-                        <input type="text" class="w40" v-model="item.name"/>
-                        <input type="text" class="h104" v-model="item.value">
-                    </div>
+
+                      <table id="1Table" border="1">
+                        <tr>
+                          <td>Condidtion</td>
+                          <td>Information</td>
+        
+                        </tr>
+                        <tr>
+
+                          <td><input size=25 type="text" id="latbox" /></td>
+                          <td><input size=25 type="text" id="lngbox" /></td>
+
+                        </tr>
+                      </table>
+
                     <br>
                     <div class="flex">
-                        <span @click="add('second')" class="btn btn-info" style="margin-bottom: 10px">Add Metric</span>
-                        <span @click="remove('second')" class="btn btn-info" style="margin-bottom: 10px">Remove Metric</span>
+                        <span onclick="insRow(1)" class="btn btn-info" style="margin-bottom: 10px">Add Metric</span>
+                        <span onclick="deleteRow(1)" class="btn btn-info" style="margin-bottom: 10px">Remove Metric</span>
                     </div>
                     <div class="hidden">
-                        <button @click="submit('second')" class="btn btn-info">Submit</button>
+                        <button onclick="show(1)"  class="btn btn-info">Submit</button>
                     </div>
                     <div class="resultBox" v-if="secondText">
                         <h1>Result:</h1>
-                        <div v-html="secondText"></div>
+                        <label id="lbl1"></label>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -81,11 +92,22 @@ function deleteRow(type) {
   if(type==0){
     row_length = myLenArray[0];
   }
-  // var i = row.parentNode.parentNode.rowIndex;
-  document.getElementById(type+'Table').deleteRow(row_length);
-  if(type==0) {
-     myLenArray[0] -= 1;
+  if(type==1){
+    row_length = myLenArray[1];
   }
+  if(row_length<=1){
+    alert('When there is only one option, it cannot be deleted.');
+  } else {
+      // var i = row.parentNode.parentNode.rowIndex;
+      document.getElementById(type+'Table').deleteRow(row_length);
+      if(type==0) {
+         myLenArray[0] -= 1;
+      }
+      if(type==1) {
+         myLenArray[1] -= 1;
+      }
+  }
+
  
 }
 
@@ -98,17 +120,42 @@ function insRow(type) {
   if(type==0) {
      myLenArray[0] = len;
   }
+  if(type==1){
+    myLenArray[1] = len;
+  }
   
 
   x.appendChild(new_row);
 }
 
 function show(type) {
-    alert(type+'show');
+    var text = '';
+    var x=document.getElementById(type+'Table');
+    var arrayLength = x.rows.length;
+    // alert(x.rows[1].cells[0].firstChild.value);
+    if(x.rows[1].cells[0].firstChild.value == ''){
+        alert('Please fill in the item.');
+    } else {
+         for (var i = 0; i < arrayLength; i++) {
+            // console.log(x.rows[i]);
+            var c_input = x.rows[i].cells[0].firstChild.value;
+            var i_input = x.rows[i].cells[1].firstChild.value;
+
+            console.log(c_input + ',' + i_input);
+            if(i!=0){
+                text += c_input + ',' + i_input + '<br/>'
+            }
+            
+            //Do something
+        }
+        document.getElementById('lbl'+type).innerHTML = text;
+        // alert(text);       
+    }
+
+
 }
 
-var firstL = ['f0', 'f1']
-var secondL = ['s0', 's1']
+
 
 
 </script>
