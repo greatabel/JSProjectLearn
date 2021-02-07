@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="Fragments::myHead">
+    <title>AddMetrics</title>
+</head>
+<body>
+<header th:replace="Fragments::navigationBar"></header>
+<body>
+<!--1.navigation bar-->
+<div class = "container p-3 my-3 bg-dark text-white" style=" border-radius: 0.5em;">
+    <h1 class="display-3">Add Metrics</h1><br>
+    <div id="app">
+        <div class="w70">
+            <div class="flex">
+                <div class="box mr100">
+                    <h1>Estimated</h1>
+                    <p class="spread">Condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information</p>
+                    <div class="flex" v-for="(item,index) in firstList" :key="index" style="margin-bottom: 10px">
+                        <input type="text" class="btn w40" v-model="item.name"/>
+                        <input type="text" class="h104" v-model="item.value">
+                    </div>
+                    <br>
+                    <div class="flex">
+                        <span @click="add('first')" class="btn btn-info" style="margin-bottom: 10px">Add Metric</span>
+                        <span @click="remove('first')" class="btn btn-info" style="margin-bottom: 10px">Remove Metric</span>
+                    </div>
+                    <div class="hidden">
+                        <button @click="submit('first')" class="btn btn-info">Submit</button>
+                    </div>
+                    <div class="resultBox" v-if="firstText">
+                        <h1>Result:</h1>
+                        <div v-html="firstText"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h1>Actual</h1>
+                    <p class="spread">Condition&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information</p>
+                    <div class="flex" v-for="(item,index) in secondList" :key="index" style="margin-bottom: 10px">
+                        <input type="text" class="btn w40" v-model="item.name"/>
+                        <input type="text" class="h104" v-model="item.value">
+                    </div>
+                    <br>
+                    <div class="flex">
+                        <span @click="add('second')" class="btn btn-info" style="margin-bottom: 10px">Add Metric</span>
+                        <span @click="remove('second')" class="btn btn-info" style="margin-bottom: 10px">Remove Metric</span>
+                    </div>
+                    <div class="hidden">
+                        <button @click="submit('second')" class="btn btn-info">Submit</button>
+                    </div>
+                    <div class="resultBox" v-if="secondText">
+                        <h1>Result:</h1>
+                        <div v-html="secondText"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            show:false,
+            firstList:[
+                {
+                    name:'',
+                    value:0,
+                }
+            ],
+            secondList:[
+                {
+                    name:'',
+                    value:0,
+                }
+            ],
+            firstText:'',
+            secondText:''
+        },
+        mounted(){
+        },
+        methods: {
+            handleShow(){
+                this.show = true;
+            },
+            add(type){
+                let item = {
+                    name:'',
+                    value:0
+                }
+                if(type == 'first'){
+                    this.firstList.map(e=>{
+                        if(e.value){
+                            this.firstList.push(item);
+                        }else{
+                            alert('Please fill in the item.');
+                        }
+                    })
+                }else{
+                    this.secondList.map(e=>{
+                        if(e.value){
+                            this.secondList.push(item);
+                        }else{
+                            alert('Please fill in the item.');
+                        }
+                    })
+                }
+
+            },
+            remove(type){
+                if(type == 'first'){
+                    if(this.firstList.length>1){
+                        this.firstList.splice(this.firstList.length-1,1);
+                    }else{
+                        alert('When there is only one option, it cannot be deleted.');
+                    }
+                }else{
+                    if(this.secondList.length>1){
+                        this.secondList.splice(this.secondList.length-1,1);
+                    }else{
+                        alert('When there is only one option, it cannot be deleted.');
+                    }
+                }
+            },
+            submit(type){
+                let firstList = '';
+                let secondList = '';
+                if(type == 'first'){
+                    this.firstList.map(e=>{
+                        if(e.name && e.value){
+                            firstList = firstList + e.name +':'+ e.value + '</br>';
+                        }
+                    })
+                    if(firstList){
+                        this.firstText = firstList;
+                    }else{
+                        alert('Please complete');
+                    }
+                }else{
+                    this.secondList.map(e=>{
+                        if(e.name && e.value){
+                            secondList = secondList + e.name +':'+ e.value + '</br>';
+                        }
+                    })
+                    if(secondList){
+                        this.secondText = secondList;
+                    }else{
+                        alert('Please complete');
+                    }
+                }
+            }
+        }
+    })
+</script>
+</html>
