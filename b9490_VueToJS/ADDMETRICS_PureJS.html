@@ -85,8 +85,13 @@
 
 
 <script>
+// mylenArray  store 2 tables length
 var myLenArray = [0, 0];
 
+// delete last-row of table according to type
+// use type determine which table
+// type 0 is estimate table
+// type 1 is actural tabble
 function deleteRow(type) {
  var row_length = 0;
   if(type==0){
@@ -111,7 +116,10 @@ function deleteRow(type) {
  
 }
 
-
+// add new rows with 2 inputs into table
+// use type determine which table
+// type 0 is estimate table
+// type 1 is actural tabble
 function insRow(type) {
   console.log('hi');
   var x = document.getElementById(type+'Table');
@@ -128,6 +136,11 @@ function insRow(type) {
   x.appendChild(new_row);
 }
 
+
+// show according tables's all input values the result area
+// use type determine which table
+// type 0 is estimate table
+// type 1 is actural tabble
 function show(type) {
     var text = '';
     var x=document.getElementById(type+'Table');
