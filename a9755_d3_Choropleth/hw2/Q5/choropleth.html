@@ -2,9 +2,9 @@
 <meta charset="utf-8">
 <head>
 	<!-- add title -->
-	
+	<title>World Game Choropleth</title>
     <!-- import required libraries here -->
-	
+	<script type="text/javascript" src="../lib/d3.v5.min.js"></script>
 	<style>
 		/* define CSS rules here */
 	
@@ -16,7 +16,9 @@
     <!-- Add heading for the visualization -->
 	
 	<!-- Create dropdown element here. Options should be added after reading in game file, they should not be created here.-->
-	
+	<select id="selectElementId"></select>
+
+
 	<!-- append visualization svg to this div-->
     <div id="choropleth"></div>
 
@@ -31,15 +33,23 @@
 		// enter code to define tooltip
         
 		// enter code to define projection and path required for Choropleth
-
+		const files = ["world_countries.json", "ratings-by-country.csv"];
+		const promises = [];
+		const popByName = d3.map();
+		function row(d) {
+		    popByName.set(d.name, +d.population);
+		};
 		// define any other global variables 
+		files.forEach(function(url, index) {
+		    promises.push(index ? d3.csv(url) : d3.json(url))
+		});
 
-        Promise.all([
-            // enter code to read files
-			
-        ]).then(
-            // enter code to call ready() with required arguments
-			
+        Promise.all(promises).then(function(data) {
+			    console.log(data); //check if all data was loaded
+
+			    //any code that depends on 'data' goes here
+			    ready('', data[0], data[1] )
+			}
         );
 		
 		// this function should be called once the data from files have been read
@@ -48,9 +58,21 @@
 		
         function ready(error, world, gameData) {
             // enter code to extract all unique games from gameData
+            console.log('world', typeof world,world, world[0]);
+
+            console.log('gameData', typeof gameData, gameData[0]);
 
             // enter code to append the game options to the dropdown
-			
+			var min = 1,
+		    max = 10,
+		    select = document.getElementById('selectElementId');
+
+			for (var i = min; i<=max; i++){
+			    var opt = document.createElement('option');
+			    opt.value = i;
+			    opt.innerHTML = i;
+			    select.appendChild(opt);
+			}
             // event listener for the dropdown. Update choropleth and legend when selection changes. Call createMapAndLegend() with required arguments.
 			
             // create Choropleth with default option. Call createMapAndLegend() with required arguments. 
