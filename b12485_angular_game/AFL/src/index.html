@@ -1,0 +1,284 @@
+<!-- <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AFL</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+ -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StateMan Test</title>
+  <script src="https://rawgit.com/leeluolee/stateman/master/stateman.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+<h4>Yuhang Zeng 20608146 favourite Team is:
+<div style="color:blue">Richmond(RIC with id(14))</div>
+</h4>
+
+
+<img src="https://www.squiggle.com.au/wp-content/themes/squiggle/assets/images/Richmond.png" />
+
+<ul>
+  <li><a href="#/home">/home</a></li>
+  <li><a href="#/prediction">1. prediction that my team will win their next game</a></li>
+
+  <li><a href="#/allresult">2.results of all games my team has played this season</a></li>
+   <li><a href="#/coming_result">3. next 5 matches for my team</a></li>
+  <li><a href="#/all_venues">4. all the venues where my team has won so far this season</a></li>
+  <li><a href="#/contact/2/message">5 head-to-head games</a></li>
+</ul>
+
+
+
+<div id="contentDiv"></div>
+<div id="resultText"></div>
+
+
+  
+<script>
+  function allresult(id) {
+var target = 'https://api.squiggle.com.au/?q=games;year=2021;complete=100'
+
+if(id==3){
+	target = 'https://api.squiggle.com.au/?q=games;year=2021;complete=!100'
+}
+$.ajax({
+
+url: target,
+dataType: 'json',
+type: 'GET',
+}).done(function(response) {
+
+console.log(response);
+var table = $('<table>').addClass('tbl');
+var heading = $('<tr>').html('<th>ascore&nbsp;</th><th>hteam</th><th>ateam</th><th>winner</th><th>&nbsp;venue</th>');
+
+table.append(heading);
+
+for(i=0; i< response.games.length; i++){
+	
+    var pos = response.games[i].ascore;
+	var hteam = response.games[i].hteam;
+	var ateam = response.games[i].ateam;
+	var winner = response.games[i].winner;
+	var venue = response.games[i].venue;
+	if(hteam.trim() === 'Richmond' || ateam.trim() === 'Richmond')
+	{
+		// if(hteam=="Richmond" or ateam=="Richmond") {
+			 var row = $('<tr>').html('<td>'+pos+'</td><td>'+hteam+'</td><td>'+ateam+'</td>'
+			 	+ '</td><td>'+winner+'</td>'+ '</td><td>&nbsp;'+venue+'</td>');
+	   		 table.append(row);
+		// }
+	}
+
+
+}
+
+$('#resultText').append(table);
+
+
+});
+
+  }
+
+
+//----
+
+  function all_win_places() {
+var target = 'https://api.squiggle.com.au/?q=games;year=2021;complete=100'
+
+
+$.ajax({
+
+url: target,
+dataType: 'json',
+type: 'GET',
+}).done(function(response) {
+
+console.log(response);
+var table = $('<table>').addClass('tbl');
+var heading = $('<tr>').html('<th>&nbsp;venue</th>');
+
+table.append(heading);
+
+for(i=0; i< response.games.length; i++){
+	
+    var pos = response.games[i].ascore;
+	var hteam = response.games[i].hteam;
+	var ateam = response.games[i].ateam;
+	var winner = response.games[i].winner;
+	var venue = response.games[i].venue;
+	if(hteam.trim() === 'Richmond' || ateam.trim() === 'Richmond')
+	{
+		if(winner=='Richmond'){
+			var row = $('<tr>').html('<td>&nbsp;'+venue+'</td>');
+	   		 table.append(row);
+		}
+		// if(hteam=="Richmond" or ateam=="Richmond") {
+
+		// }
+	}
+
+
+}
+
+$('#resultText').append(table);
+
+
+});
+
+  }
+//---
+
+  function predict() {
+
+$.ajax({
+
+url: 'https://api.squiggle.com.au/?q=tips;year=2021;round=14',
+dataType: 'json',
+type: 'GET',
+}).done(function(response) {
+
+console.log(response);
+var table = $('<table>').addClass('tbl');
+var heading = $('<tr>').html('<th>gameid&nbsp;</th><th>ateam</th><th>confidence</th>');
+
+table.append(heading);
+
+for(i=0; i< response.tips.length; i++){
+	
+    var tip = response.tips[i].tip;
+    var gameid = response.tips[i].gameid;
+	var confidence = response.tips[i].confidence;
+	var ateam = response.tips[i].ateam;
+
+	if(tip.trim() === 'Richmond' || ateam.trim() === 'Richmond')
+	{
+		// if(hteam=="Richmond" or ateam=="Richmond") {
+			 var row = $('<tr>').html('<td>'+gameid+'</td><td>'+ateam+'&nbsp;</td><td>'+confidence+'</td>');
+	   		 table.append(row);
+		// }
+	}
+
+
+}
+
+$('#resultText').append(table);
+
+
+});
+
+  }
+
+
+  var states = {
+    "prediction": {
+      enter: function(){
+      	predict()
+
+        // $("#contentDiv").text('predict');
+      },
+      leave: function(){
+         $("#resultText").text('');
+      }
+    },
+    "allresult": {
+      enter: function(){
+        allresult(2)
+      },
+      leave: function(){
+        $("#resultText").text('');
+      }
+    },
+    "coming_result": {
+      enter: function(){
+        allresult(3)
+      },
+      leave: function(){
+        $("#resultText").text('');
+      }
+    },
+    "all_venues": {
+      enter: function(){
+        all_win_places(4)
+      },
+      leave: function(){
+        $("#resultText").text('');
+      }
+    },
+    "user.list":{
+      url: "",
+      enter: function(){
+        // in real enviroment, you need a template engine to complete the work.
+        activeOne(".user-list");
+        var list = "<ul>";
+        for(var i = 0; i < 4; i++){
+          list += "<li><a href='#/user/" + i + "'>user " + i + "</a></li>"
+        }
+        list += "</ul>"
+        $(".j-user").html(list);
+
+      }
+    },
+    "user.detail":{
+      url: ":id(\\d+)",
+      enter: function(option){
+        activeOne(".user-detail");
+        this.update(option);
+      },
+      // because the param.id may change. 
+      update: function(option){
+        // update or enter, we need update the user infomation
+        $(".j-user").html("<h4><a href='#/user'><< return list</a></h4>User " + option.param.id + "'s detail");
+      }
+    }
+  }
+
+
+  var config = {
+    enter: function(){
+      console.log("enter: " + this.name)
+    },
+    leave: function(){
+      console.log("leave: " + this.name)
+    }
+  }
+
+  function create(o){
+    o = o || {};
+    o.enter= config.enter;
+    o.leave = config.leave;
+    return o;
+  }
+
+  var stateman = new StateMan();
+
+  stateman
+  	.state(states)
+    .state("home", config)
+    .state("contact", config)
+    .state("contact.list", config )
+    .state("contact.detail", create({url: ":id(\\d+)"}))
+    .state("contact.detail.option", config)
+    .state("contact.detail.message", config)
+    .start({});
+</script>
+</body>
+</html>
