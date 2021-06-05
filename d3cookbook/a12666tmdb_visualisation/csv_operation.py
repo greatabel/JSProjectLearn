@@ -24,3 +24,10 @@ def csv_reader(filename, directory="./"):
 	        # if line['Addition Information'] == str 
            # do something
 	return mylist
+
+def csv_write(myData, filename):
+	# myData = [[1, 2, 3], ['Good Morning', 'Good Evening', 'Good Afternoon']]
+	myFile = open(filename, 'w')
+	with myFile:
+	   writer = csv.writer(myFile)
+	   writer.writerows(myData)
