@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Load d3-cloud -->
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+
+// List of words
+// var myWords = [{word: "Running", size: "10"}, {word: "Surfing", size: "20"}, {word: "Climbing", size: "50"}, {word: "Kiting", size: "30"}, {word: "Sailing", size: "20"}, {word: "Snowboarding", size: "60"} ]
+
+var myWords = [{'word': 'Alec Baldwin', 'size': 39}, {'word': 'Anthony Hopkins', 'size': 34}, {'word': 'Antonio Banderas', 'size': 31}, {'word': 'Arnold Schwarzenegger', 'size': 32}, {'word': 'Ben Kingsley', 'size': 34}, {'word': 'Ben Stiller', 'size': 33}, {'word': 'Bill Hader', 'size': 34}, {'word': 'Bill Murray', 'size': 35}, {'word': 'Brad Pitt', 'size': 38}, {'word': 'Brian Cox', 'size': 33}, {'word': 'Bruce Willis', 'size': 51}, {'word': 'Cameron Diaz', 'size': 31}, {'word': 'Cate Blanchett', 'size': 31}, {'word': 'Christopher Plummer', 'size': 32}, {'word': 'Christopher Walken', 'size': 35}, {'word': 'David Koechner', 'size': 34}, {'word': 'Denzel Washington', 'size': 31}, {'word': 'Donald Sutherland', 'size': 31}, {'word': 'Frank Welker', 'size': 33}, {'word': 'George Clooney', 'size': 34}, {'word': 'Harrison Ford', 'size': 32}, {'word': 'J.K. Simmons', 'size': 35}, {'word': 'Jack Black', 'size': 34}, {'word': 'Jim Broadbent', 'size': 38}, {'word': 'John C. Reilly', 'size': 32}, {'word': 'John Goodman', 'size': 39}, {'word': 'John Hurt', 'size': 32}, {'word': 'Johnny Depp', 'size': 40}, {'word': 'Julia Roberts', 'size': 33}, {'word': 'Julianne Moore', 'size': 31}, {'word': 'Justin Long', 'size': 34}, {'word': 'Keith David', 'size': 35}, {'word': 'Laurence Fishburne', 'size': 33}, {'word': 'Liam Neeson', 'size': 41}, {'word': 'Luis Guzmán', 'size': 31}, {'word': 'Mark Wahlberg', 'size': 31}, {'word': 'Matt Damon', 'size': 48}, {'word': 'Michael Shannon', 'size': 34}, {'word': 'Morgan Freeman', 'size': 46}, {'word': 'Nicolas Cage', 'size': 39}, {'word': 'Owen Wilson', 'size': 40}, {'word': 'Paul Giamatti', 'size': 37}, {'word': 'Paul Rudd', 'size': 34}, {'word': 'Philip Seymour Hoffman', 'size': 31}, {'word': 'Richard Jenkins', 'size': 36}, {'word': 'Robert De Niro', 'size': 57}, {'word': 'Robin Williams', 'size': 34}, {'word': 'Samuel L. Jackson', 'size': 67}, {'word': 'Sigourney Weaver', 'size': 33}, {'word': 'Stanley Tucci', 'size': 38}, {'word': 'Steve Buscemi', 'size': 43}, {'word': 'Susan Sarandon', 'size': 36}, {'word': 'Sylvester Stallone', 'size': 32}, {'word': 'Tom Cruise', 'size': 33}, {'word': 'Tom Hanks', 'size': 32}, {'word': 'Will Ferrell', 'size': 37}, {'word': 'Willem Dafoe', 'size': 38}, {'word': 'William H. Macy', 'size': 33}, {'word': 'Woody Harrelson', 'size': 31}]
+
+
+// set the dimensions and margins of the graph
+var margin = {top: 10, right: 10, bottom: 10, left: 10},
+    width = 1050 - margin.left - margin.right,
+    height = 750 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
+// Wordcloud features that are different from one word to the other must be here
+var layout = d3.layout.cloud()
+  .size([width, height])
+  .words(myWords.map(function(d) { return {text: d.word, size:d.size}; }))
+  .padding(5)        //space between words
+  .rotate(function() { return ~~(Math.random() * 2) * 90; })
+  .fontSize(function(d) { return d.size; })      // font size of words
+  .on("end", draw);
+layout.start();
+
+// This function takes the output of 'layout' above and draw the words
+// Wordcloud features that are THE SAME from one word to the other can be here
+function draw(words) {
+  svg
+    .append("g")
+      .attr("transform", "translate(" + layout.size()[0] / 2 + "," + layout.size()[1] / 2 + ")")
+      .selectAll("text")
+        .data(words)
+      .enter().append("text")
+        .style("font-size", function(d) { return d.size; })
+        .style("fill", "#69b3a2")
+        .attr("text-anchor", "middle")
+        .style("font-family", "Impact")
+        .attr("transform", function(d) {
+          return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+        })
+        .text(function(d) { return d.text; });
+}
+</script>
+
+</body>
+
+</html>
