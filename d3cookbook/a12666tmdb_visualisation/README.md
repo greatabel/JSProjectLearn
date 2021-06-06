@@ -14,8 +14,10 @@ python -m SimpleHTTPServer 8000
 ```
 * Then you can use the following link to access:
 
-http://0.0.0.0:8000/a12666tmdb_visualisation/
 
+http://0.0.0.0:8000/a12666tmdb_visualisation/index.html
+
+The theme used is: https://templatemag.com/demo/Stanley/ modified
 ----------------------------------------
 
 # imdb可视化
@@ -34,5 +36,7 @@ python -m SimpleHTTPServer 8000
 ``` 
 * 然后可使用如下链接访问：
 
-http://0.0.0.0:8000/a12666tmdb_visualisation/
+http://0.0.0.0:8000/a12666tmdb_visualisation/index.html
 
+
+主题使用的是：https://templatemag.com/demo/Stanley/ 进行修改的
