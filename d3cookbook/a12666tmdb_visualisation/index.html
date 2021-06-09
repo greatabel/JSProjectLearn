@@ -22,16 +22,81 @@
 
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
+  <style>
+.background-filter::after {
+  -webkit-backdrop-filter: blur(5px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(5px); /* Supported in Chrome 76 */
 
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0;
+}
+
+.background-filter {
+  position: relative;
+}
+
+.background {
+ 
+  width: 200px;
+  height: 200px;
+}
+
+/* Use for content that should not be blurred */
+.u-non-blurred {
+  position: relative;
+  z-index: 1;
+}ilter: blur(5px);
+}
+  </style>
   <!-- =======================================================
     Template Name: Sean
     Template URL: https://templatemag.com/Sean-bootstrap-freelancer-template/
     Author: TemplateMag.com
     License: https://templatemag.com/license/
   ======================================================= -->
+<script type="text/javascript">
+
+function setbackground()
+{
+window.setTimeout( "setbackground()", 5000); // 5000 milliseconds delay
+
+var index = Math.round(Math.random() * 3);
+
+var ImagePath = "1.jpg"; // default image
+
+if(index == 1)
+ImagePath = "1.jpg"; 
+if(index == 2)
+ImagePath = "2.jpg";
+if(index == 3)
+ImagePath = "3.jpg";
+if(index == 4)
+ImagePath = "image4.jpg";
+if(index == 5)
+ImagePath = "image5.jpg"; 
+if(index == 6)
+ImagePath = "image6.jpg"; 
+if(index == 7)
+ImagePath = "image7.jpg"; 
+if(index == 8)
+ImagePath = "image8.jpg"; 
+if(index == 9)
+ImagePath = "image9.jpg"; 
+
+ImagePath = 'img/' + ImagePath;
+document.getElementsByTagName("body")[0].style.backgroundImage="url('"+ ImagePath+ "')"
+
+}
+</script>
+
 </head>
 
-<body>
+<body onload="setbackground();">
+
+
 
   <!-- Static navbar -->
   <div class="navbar navbar-inverse navbar-static-top">
@@ -171,6 +236,8 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+<script type="text/javascript"> 
 
+</script> 
 </body>
 </html>
