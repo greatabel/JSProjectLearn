@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>Time Scale</title>
     <link rel="stylesheet" type="text/css" href="../../css/styles.css"/>
+    
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
     <style type="text/css">
       
       .tooltip {
@@ -22,9 +25,32 @@
     </style>
     <!-- <script type="text/javascript" src="../../lib/d3.js"></script> -->
     <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
+
+
+<div class="container">
+
+
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">All charts
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All charts</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="0" href="#">revenue vs popularity</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="1" href="#">budget vs revenue</a></li>
+
+      <li role="presentation"><a role="menuitem" tabindex="2" href="#">vote_average vs vote_count</a></li>    
+      <li role="presentation"><a role="menuitem" tabindex="3" href="#">votecount vs revenue</a></li>    
+    </ul>
+  </div>
+</div>
+
+
 <h3>revenue vs popularity </h3>
 <div id="my_dataviz" ></div>
 
@@ -44,6 +70,49 @@
 </div>
 
 <script>
+$('.dropdown-menu a').click(function () {           
+
+
+
+    var name = $(this).text();
+    if(name == "All charts") {
+      $('#my_dataviz').show();
+      $('#my_dataviz2').show();
+      $('#my_dataviz3').show();
+      $('#my_dataviz4').show();
+
+    }    
+    if(name == "revenue vs popularity") {
+      $('#my_dataviz').show();
+      $('#my_dataviz2').slideUp();
+      $('#my_dataviz3').slideUp();
+      $('#my_dataviz4').slideUp();
+
+    }
+    if(name == "budget vs revenue") {
+      $('#my_dataviz').slideUp();
+      $('#my_dataviz2').show();
+      $('#my_dataviz3').slideUp();
+      $('#my_dataviz4').slideUp();
+
+    }
+    if(name == "vote_average vs vote_count") {
+      $('#my_dataviz').slideUp();
+      $('#my_dataviz2').slideUp();
+      $('#my_dataviz3').show();
+      $('#my_dataviz4').slideUp();
+
+    }
+    if(name == "votecount vs revenue") {
+      $('#my_dataviz').slideUp();
+      $('#my_dataviz2').slideUp();
+      $('#my_dataviz3').slideUp();
+      $('#my_dataviz4').show();
+
+    }
+
+  });
+
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
