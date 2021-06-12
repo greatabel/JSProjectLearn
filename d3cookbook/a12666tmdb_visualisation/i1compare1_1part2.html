@@ -51,9 +51,87 @@
 </div>
 
 
-<h3>revenue vs popularity </h3>
-<div id="my_dataviz" ></div>
+<div class="row">
+  <div id="col1" class="col-xs-6 col-md-6">  
 
+    <h3> 
+      <label for="the-id-of-the-input" style="cursor: pointer; border: 1px solid green;">占位符</label>
+        revenue vs popularity </h3>
+    <div id="my_dataviz" ></div>
+  </div>
+  <div id="col2" class="col-xs-6 col-md-6">  
+    <br/>
+    test test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+  </div>
+</div>
+
+
+<div class="row">
+  <div id="col1" class="col-xs-6 col-md-6">  
+
+    <h3> 
+      <label for="the-id-of-the-input" style="cursor: pointer; border: 1px solid green;">占位符</label>
+        budget vs revenue </h3>
+    <div id="my_dataviz2" ></div>
+  </div>
+  <div id="col2" class="col-xs-6 col-md-6">  
+    <br/>
+    test test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+  </div>
+</div>
+
+
+<div class="row">
+  <div id="col1" class="col-xs-6 col-md-6">  
+
+    <h3> 
+      <label for="the-id-of-the-input" style="cursor: pointer; border: 1px solid green;">占位符</label>
+        vote_average vs vote_count </h3>
+    <div id="my_dataviz3" ></div>
+  </div>
+  <div id="col2" class="col-xs-6 col-md-6">  
+    <br/>
+    test test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+  </div>
+</div>
+
+
+<div class="row">
+  <div id="col1" class="col-xs-6 col-md-6">  
+
+    <h3> 
+      <label for="the-id-of-the-input" style="cursor: pointer; border: 1px solid green;">占位符</label>
+        votecount vs revenue </h3>
+    <div id="my_dataviz4" ></div>
+  </div>
+  <div id="col2" class="col-xs-6 col-md-6">  
+    <br/>
+    test test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+    test testtest testtest testtest testtest test <br/>
+  </div>
+</div>
+
+
+<!-- 
 <h3>budget vs revenue </h3>
 <div id="my_dataviz2"></div>
 
@@ -63,7 +141,7 @@
 
 <h3> votecount vs revenue</h3>
 <div id="my_dataviz4"></div>
-
+ -->
 <div>
 <a href="i1compare1to1.html" class="next">›</a>
 
@@ -191,7 +269,7 @@ d3.csv("i1one_to_one.csv", function(data) {
       .attr("cx", function (d) { return x(d.revenue); } )
       .attr("cy", function (d) { return y(d.popularity); } )
       .attr("r", 7)
-      .style("fill", "#69b3a2")
+      .style("fill", "purple")
       .style("opacity", 0.3)
       .style("stroke", "white")
     .on("mouseover", mouseover )
