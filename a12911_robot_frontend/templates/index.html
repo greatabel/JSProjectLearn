@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>郭宏宇 - Bootstrap Freelancer Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="/static/img/favicon.png" rel="icon">
+  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <!-- <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"> -->
+
+  <!-- Main Stylesheet File -->
+  <link href="/static/css/style.css" rel="stylesheet">
+  <style>
+.background-filter::after {
+  -webkit-backdrop-filter: blur(5px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(5px); /* Supported in Chrome 76 */
+
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0;
+}
+
+.background-filter {
+  position: relative;
+}
+
+.background {
+ 
+  width: 200px;
+  height: 200px;
+}
+
+/* Use for content that should not be blurred */
+.u-non-blurred {
+  position: relative;
+  z-index: 1;
+}ilter: blur(5px);
+}
+  </style>
+  <!-- =======================================================
+    Template Name: 郭宏宇
+    Template URL: https://templatemag.com/郭宏宇-bootstrap-freelancer-template/
+    Author: TemplateMag.com
+    License: https://templatemag.com/license/
+  ======================================================= -->
+<script type="text/javascript">
+
+function setbackground()
+{
+window.setTimeout( "setbackground()", 4000); // 5000 milliseconds delay
+
+var index = Math.round(Math.random() * 3);
+
+var ImagePath = "1.jpg"; // default image
+
+if(index == 1)
+ImagePath = "1.jpg"; 
+if(index == 2)
+ImagePath = "2.jpg";
+if(index == 3)
+ImagePath = "3.jpg";
+if(index == 4)
+ImagePath = "image4.jpg";
+if(index == 5)
+ImagePath = "image5.jpg"; 
+if(index == 6)
+ImagePath = "image6.jpg"; 
+if(index == 7)
+ImagePath = "image7.jpg"; 
+if(index == 8)
+ImagePath = "image8.jpg"; 
+if(index == 9)
+ImagePath = "image9.jpg"; 
+
+ImagePath = 'img/' + ImagePath;
+document.getElementsByTagName("body")[0].style.backgroundImage="url('static/"+ ImagePath+ "')"
+
+}
+</script>
+
+</head>
+
+<body onload="setbackground();">
+
+
+
+  <!-- Static navbar -->
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">郭宏宇的博物馆</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+<!--           <li><a href="work.html">Work</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li> -->
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </div>
+
+  <!-- +++++ Welcome Section +++++ -->
+  <div id="ww">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 centered">
+          <img src="/static/img/user.png" alt="郭宏宇">
+          <h1>Hi, 大家好，我是郭宏宇!</h1>
+          <p>欢迎来到我的博物馆，现在你可以开始搜索感兴趣的展品！</p>
+<!--           <p>Please, consider to register to <a href="#">our newsletter</a> to be updated with our latest themes and freebies. Like always, you can use this theme in any project freely. Share it with your friends.</p> -->
+
+
+
+
+        </div>
+        <!-- /col-lg-8 -->
+      </div>
+      <!-- /row -->
+
+      <div class="row">
+ <div class="col-lg-8 col-lg-offset-2 centered">
+    
+<form class="form-inline" style="display: none;font-weight:bold;color:blue" id="msgDiv">
+   <div class="form-group" id="type_group">
+    <label class="radio-inline">您可能需要输入：</label>
+         <label class="radio-inline">
+     <input id="inlineradio1" name="sampleinlineradio" value="藏品编号" type="radio">
+     1.藏品编号</label>
+    <label class="radio-inline">
+     <input id="inlineradio2" name="sampleinlineradio" value="藏品名称" type="radio">
+     2.藏品名称</label>
+    <label class="radio-inline">
+     <input id="inlineradio3" name="sampleinlineradio" value="藏品类别" type="radio">
+     3.藏品类别</label>
+    <label class="radio-inline">
+     <input id="inlineradio4" name="sampleinlineradio" value="藏品年代" type="radio">
+     4.藏品年代</label>
+    <label class="radio-inline">
+     <input id="inlineradio5" name="sampleinlineradio" value="陈列区域" type="radio">
+     5.陈列区域</label>
+    <label class="radio-inline">
+     <input id="inlineradio6" name="sampleinlineradio" value="输出全部" type="radio">
+     6.输出全部</label>
+    </div>
+   <!--form-group-->
+    (藏品类别包含：音像制品、 雕塑、造像、陶器 、铜器、铁器、其他金属器、钱币、金银器)
+ </form>
+ 
+
+ </div>
+      </div>
+
+      <div class="row">
+ <div class="col-lg-8 col-lg-offset-2 centered">
+    
+    <input type="text" class="form-control" id="txtInput" placeholder="请输入展品名称" />
+    <br/>
+    <button class="btn btn-primary" type="button" id="btnSearch" >开始搜索</button>
+ 
+
+ </div>
+      </div>
+
+<br/>
+ 
+ <div class="row">
+ <div class="col-lg-8 col-lg-offset-2 centered">
+
+    <span id="resultDiv" style="font-weight:bold;color:blue;white-space: pre-line"></span>
+ 
+
+ </div>
+  </div>
+
+
+
+    </div>
+
+    <!-- /container -->
+  </div>
+  <!-- /ww -->
+
+
+  <!-- +++++ Projects Section +++++ -->
+
+  <div class="container pt">
+
+    <div class="row mt centered">
+      <div class="col-lg-3">
+        <a href="i1compare1_1part2.html"><img class="img-responsive" src="/static/img/portfolio/port01.jpg" alt="" /></a>
+        <p>All numeric variables One-to-one correlation 2</p>
+      </div>
+      <div class="col-lg-3">
+        <a href="i1compare1to1.html"><img class="img-responsive" src="/static/img/portfolio/port02.jpg" alt="" /></a>
+        <p>All numeric variables One-to-one correlation 1</p>
+      </div>
+
+      <div class="col-lg-3">
+        <a href="i5relationship.html"><img class="img-responsive" src="/static/img/portfolio/port03.jpg" alt="" /></a>
+        <p>Relationship between actors</p>
+      </div>
+      <div class="col-lg-3">
+        <a href="i4word_cloud.html"><img class="img-responsive" src="/static/img/portfolio/port05.jpg" alt="" /></a>
+        <p>World Cloud for actor names</p>
+      </div>
+
+    </div>
+
+    <!-- /row -->
+<!--     <div class="row mt centered">
+      <div class="col-lg-3">
+        <a href="i3show.html"><img class="img-responsive" src="img/portfolio/port03.jpg" alt="" /></a>
+        <p>genes and vote average</p>
+      </div>
+        <div class="col-lg-3">
+        <a href="i2genres_vote.html"><img class="img-responsive" src="img/portfolio/port04.jpg" alt="" /></a>
+        <p>genes and vote average 1</p>
+      </div>
+      <div class="col-lg-3">
+        <a href="i2sankey.html"><img class="img-responsive" src="img/portfolio/port04.jpg" alt="" /></a>
+        <p>genes and vote average 2</p>
+      </div>
+
+
+
+
+      <div class="col-lg-3">
+
+      </div>
+<!--       <div class="col-lg-4">
+        <a href="work01.html"><img class="img-responsive" src="img/portfolio/port06.jpg" alt="" /></a>
+        <p>CHIEFS</p>
+      </div> -->
+    </div> -->
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+
+
+  <!-- +++++ Footer Section +++++ -->
+
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <h4>My Bunker</h4>
+          <p>
+            test
+          </p>
+        </div>
+        <!-- /col-lg-4 -->
+
+        <div class="col-lg-4">
+          <h4>My Links</h4>
+          <p>
+            <a href="#">Dribbble</a><br/>
+            <a href="#">Twitter</a><br/>
+            <a href="#">Facebook</a>
+          </p>
+        </div>
+        <!-- /col-lg-4 -->
+
+        <div class="col-lg-4">
+          <h4>About 郭宏宇</h4>
+          <p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>
+        </div>
+        <!-- /col-lg-4 -->
+      </div>
+    </div>
+  </div>
+
+  <div id="copyrights">
+    <div class="container">
+      <p>
+        &copy; Copyrights <strong>郭宏宇</strong>. All Rights Reserved
+      </p>
+      <div class="credits">
+        <!--
+          You are NOT allowed to delete the credit link to TemplateMag with free version.
+          You can delete the credit link only if you bought the pro version.
+          Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/郭宏宇-bootstrap-freelancer-template/
+          Licensing information: https://templatemag.com/license/
+        -->
+        Created with 郭宏宇 template by <a href="#">郭宏宇</a>
+      </div>
+    </div>
+  </div>
+  <!-- / copyrights -->
+
+  <!-- JavaScript Libraries -->
+  <script src="/static/lib/jquery/jquery.min.js"></script>
+  <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/static/lib/php-mail-form/validate.js"></script>
+  <!-- <script src="lib/easing/easing.min.js"></script> -->
+
+  <!-- Template Main Javascript File -->
+  <script src="/static/js/main.js"></script>
+<script type="text/javascript"> 
+$("#btnSearch").click(function(){
+    var mytext = $('#txtInput').val();
+    var is_show = $('#msgDiv').is(":visible");
+    var choosed = '藏品编号';
+    if(is_show){
+          var choosed = $('#type_group input:radio:checked').val()
+
+    }
+
+    $.ajax({
+      type: 'POST',
+      url: "/simulate_test",
+      data: {flag: choosed, text: mytext},
+      dataType: "text",
+      success: function(data){
+
+                var obj = JSON.parse(data);
+                if(obj.status == "sucess"){
+                  // alert('sucess'+obj.content);
+
+                  $('#resultDiv').text(obj.content);
+
+                }
+                if(obj.status == "failed"){
+                  $('#msgDiv').show();    
+                  $('#resultDiv').text(obj.content);
+                }
+
+               }
+    });
+
+  });
+</script> 
+</body>
+</html>

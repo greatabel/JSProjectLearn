@@ -1,9 +1,9 @@
 a {
    text-decoration: none;
    display: inline-block;
-   padding: 20px;
+   padding: 25px;
    font-size: 15px;
-   width: 40px;
+   width: 80px;
    text-align: center;
 }
 .back:hover {
