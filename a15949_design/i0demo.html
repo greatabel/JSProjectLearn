@@ -1,0 +1,55 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Simple D3 Dev Env</title>
+<script type="text/javascript" src="../d3/d3.js"></script>
+<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+
+
+
+</head>
+<body>
+
+<style>
+.cross {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 0px solid #ccc;
+}
+
+.cross:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+    width: 2px;
+    height: 100%;
+    background-color: black;
+}
+
+.cross:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    top: 45px;
+    left: 0;
+}
+
+</style>
+
+
+
+
+<div class="cross"></div>
+
+</body>
+</html>
