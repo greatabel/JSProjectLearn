@@ -51,11 +51,17 @@ div {
 
 
 </script>
+<div> 
+<span>请根据按压方便程度对以下尺寸的按钮进行评分</span>
 
+<span>(评分范围从1（非常难按)到9（非常容易按）</span>
+
+</div>
+<br/>
 
 <div id="one">
 
-<svg width="56" height="56"> Browser does not support SVG <rect width="56" height="56" 
+<svg width="53" height="53"> Browser does not support SVG <rect width="53" height="53" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 
 <br/>
@@ -83,7 +89,7 @@ div {
 
 <div id="two">
 
-<svg width="113" height="113"> Browser does not support SVG <rect width="113" height="113" 
+<svg width="107" height="107"> Browser does not support SVG <rect width="107" height="107" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 
 
@@ -112,7 +118,7 @@ div {
 
 <div id="three">
 
-<svg width="170" height="170"> Browser does not support SVG <rect width="170" height="170" 
+<svg width="160" height="160"> Browser does not support SVG <rect width="160" height="160" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 
 <br/>
@@ -138,7 +144,7 @@ div {
 </div>
 
 <div id="four">
-  <svg width="226" height="226"> Browser does not support SVG <rect width="226" height="226" 
+  <svg width="214" height="214"> Browser does not support SVG <rect width="214" height="214" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 
 <br/>
@@ -166,7 +172,7 @@ div {
 
 
 <div id="five">
-<svg width="283" height="283"> Browser does not support SVG <rect width="283" height="283" 
+<svg width="267" height="267"> Browser does not support SVG <rect width="267" height="267" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 <br/>
 <div class="select_wrap" id="select4">
@@ -190,7 +196,7 @@ div {
 </div>
 
 <div id="six">
-<svg width="340" height="340"> Browser does not support SVG <rect width="340" height="340" 
+<svg width="320" height="320"> Browser does not support SVG <rect width="320" height="320" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 
 <br/>
@@ -216,7 +222,7 @@ div {
 
 
 <div id="seven">
-<svg width="396" height="396"> Browser does not support SVG <rect width="396" height="396" 
+<svg width="374" height="374"> Browser does not support SVG <rect width="374" height="374" 
   style="fill:rgb(0,0,160);stroke-width:1;stroke:rgb(0,0,0)"></svg>
 <br/>
 <div class="select_wrap" id="select6">
@@ -249,7 +255,7 @@ div {
 
 function myFunction() {
   var text = '所有评分如下：\n';
-  for (let i = 1; i < 7; i++) {
+  for (let i = 0; i <= 7; i++) {
     var selected = $('#selectElem' + i + ' :selected').text();
   text += selected + "\n";
   }
